@@ -1,0 +1,39 @@
+.welcome-page-header {
+    text-align: center;
+    width: 100%;
+    font-size: 30px;
+    padding: 1px;
+    background-color: #2D0C32; 
+    color: white;
+}
+
+footer{
+    background-color: #2D0C32;
+    width: 100%;
+    box-shadow: 0 25vh 0 25vh #2D0C32;
+}
+
+.welcome-text {
+    text-align: center;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 18px;
+}
+
+body {
+    font-family: 'serif';
+    background-color: black;
+    color: white;
+    font-size: 18px;
+}
+
+label{
+    display: inline-block;
+    width: 75px;
+    text-align: right;
+    margin: 5px;
+}
