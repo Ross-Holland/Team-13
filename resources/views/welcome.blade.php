@@ -9,12 +9,30 @@
 
     <!-- Fonts -->
     <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Styles -->
-    <link href="/css/main.css" rel="stylesheet">
+    <link href="{{ url('css/main.css') }}" rel="stylesheet">
 </head>
 
 <body class="antialiased">
+    <nav>
+        
+        <input type="checkbox" id="box">
+        <label for="box" class="boxbtn">
+            <i class="fa fa-bars"></i>
+        </label>
+        <label class="logo" href="">13Keys</label>
+        <ul>
+         <li><a href="{{ url('welcome')}}">Home</a></li>
+         <li><a href="/">Products</a></li>
+         <li><a href="/">Contact Us</a></li>
+         <li><a href="{{ url('registrationpage')}}">Login</a></li>         
+         <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:30px"></i></a></li>
+        </ul>
+        
+    </nav>
+    
     <div class="welcome-page-header">
         <H1>
             13Keys
