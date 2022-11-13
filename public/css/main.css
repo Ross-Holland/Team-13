@@ -38,6 +38,7 @@ label{
     width: 75px;
     text-align: right;
     margin: 5px;
+
 }
 
 /*Navigation bar*/
@@ -183,6 +184,7 @@ a.current1, a.current2, a:hover{
 
 
 
+
 /*Nav bar - Dark theme icons */
 
 :root{
@@ -209,3 +211,5 @@ a.current1, a.current2, a:hover{
     
 
 }
+
+
