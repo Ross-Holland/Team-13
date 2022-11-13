@@ -24,13 +24,14 @@
             <i class="fa fa-bars"></i>
         </label>
         
-          <label class="logo" href="">13Keys</label>
+          <label class="logo" href="{{ url('welcome')}}">13Keys</label>
         <ul>
-         <li><a href="{{ url('welcome')}}">Home</a></li>
+         <li><a  href="{{ url('welcome')}}">Home</a></li>
          <li><a href="/">Products</a></li>
          <li><a href="/">Contact Us</a></li>
-         <li><a href="{{ url('registrationpage')}}">Login</a></li>         
-         <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:30px"></i></a></li>
+         <li><a class="current2"href="{{ url('registrationpage')}}">Login</a></li>         
+         <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:25px"></i></a></li>
+         <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
         </ul>
 
         
@@ -40,5 +41,36 @@
 
    
 </body>
+<script>
+    var moonicon = document.getElementById("moonicon");
 
+    /* 
+    Explaniation of the JavaScript is explained in the welcome.blade.
+    */
+
+    if(localStorage.getItem("theme") == null){
+       localStorage.setItem("theme", "light-theme");
+    }
+
+    let localData = localStorage.getItem("theme");
+
+    if(localData == "light-theme"){
+       document.body.classList.remove("dark");
+
+    } else if (localData == "dark-theme"){
+       document.body.classList.add("dark");
+    }
+       
+    moonicon.onclick = function(){
+       document.body.classList.toggle("dark");
+
+    if(document.body.classList.contains("dark")){
+       localStorage.setItem("theme", "dark-theme");
+    } else {
+       localStorage.setItem("theme", "light-theme");
+    }
+
+    }
+    
+</script>
 </html>

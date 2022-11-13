@@ -5,14 +5,14 @@
     width: 100%;
     font-size: 30px;
     padding: 1px;
-    background-color: #2D0C32; 
-    color: white;
+    background-color: var(--p-colour); 
+    color: var(--s-colour);
 }
 
 footer{
-    background-color: #2D0C32;
+    background-color: var(--p-colour);
     width: 100%;
-    box-shadow: 0 25vh 0 25vh #2D0C32;
+    box-shadow: 0 25vh 0 25vh var(--p-colour);
 }
 
 .welcome-text {
@@ -20,7 +20,7 @@ footer{
     width: 50%;
     margin-left: 25%;
     margin-right: 25%;
-    color: black;
+    color: var(--s-colour);
     padding-top: 15px;
     padding-bottom: 15px;
     font-size: 18px;
@@ -28,8 +28,8 @@ footer{
 
 body {
     font-family: 'serif';
-    background-color: white;
-    color: white;
+    background-color: var(--p-colour);
+    color: var(--s-colour);
     font-size: 18px;
 }
 
@@ -55,18 +55,19 @@ body{
 }
 
 nav{
-    background-color: #583a74;
+    background-color: var(--head-colour);
     height: 78px;
     width: 100%;
 
 }
 
 label.logo{
-    color: white;
+    color: var(--s-colour);
     font-size: 35px;
     line-height: 80px;
     padding: 0 100px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 nav ul{
@@ -83,7 +84,7 @@ margin: 0 5px;
 }
 
 nav ul li a{
-color: white;
+color: var(--s-colour);
 font-size: 17px;
 padding: 7px 13px;
 border-radius: 3px;
@@ -91,16 +92,33 @@ text-transform: uppercase;
 
 }
 
- a:hover{
+#moonicon{
+color: var(--s-colour);
+font-size: 17px;
+padding: 7px 13px;
+border-radius: 3px;
+text-transform: uppercase;
+cursor: pointer;
+
+}
+
+#moonicon:hover{
+    background: none;
+    color: var(--h-colour);
+    transition: .5s;
+}
+
+a.current1, a.current2, a:hover{
 background: none;
-color: #0082e6;
+color: var(--h-colour);
 transition: .5s;
 
 }
 
+
 .boxbtn{
     font-size: 30px;
-    color: white;
+    color: var(--s-colour);
     float: right;
     line-height: 80px;
     margin-right: 40px;
@@ -135,7 +153,7 @@ transition: .5s;
     position: fixed;
     width: 100%;
     height: 100vh;
-    background: #583a74;
+    background: var(--p-colour);
     top: 75px;
     left: -100%;
     text-align: center;
@@ -152,9 +170,9 @@ transition: .5s;
 
 }
 
-a:hover{
+a.current1, a.current2, a:hover{
     background: none;
-    color: #0082e6;
+    color: var(--h-colour);
 }
 
 #box:checked ~ ul{
@@ -163,3 +181,31 @@ a:hover{
 
 }
 
+
+
+/*Nav bar - Dark theme icons */
+
+:root{
+    /*Primary (main background) and Secondary Colours (text)*/
+    --p-colour: #e0e7ff;
+    --s-colour: #1f1d1d;
+    /*Hover Colour*/
+    --h-colour: #0082e6;
+    /*Header Colours Used for Navbar and Header*/
+    --head-colour: #fb7185;
+
+    
+}
+
+.dark{
+    /*Primary (main background) and Secondary Colours (text) for mai*/
+    --p-colour: #1f1d1d;
+    --s-colour: #eaf0fd;
+    /*Hover Colour*/
+    --h-colour: #c57a09;
+    /*Header Colours Used for Navbar and Header*/
+    --head-colour: #2e2c2c;
+    
+    
+
+}

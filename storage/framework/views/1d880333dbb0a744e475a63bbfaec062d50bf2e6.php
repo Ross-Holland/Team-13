@@ -13,6 +13,7 @@
 
     <!-- Styles -->
     <link href="<?php echo e(url('css/main.css')); ?>" rel="stylesheet">
+   
 </head>
 
 <body class="antialiased">
@@ -22,21 +23,21 @@
         <label for="box" class="boxbtn">
             <i class="fa fa-bars"></i>
         </label>
-        <label class="logo" href="">13Keys</label>
+        <label class="logo" href="<?php echo e(url('welcome')); ?>">13Keys</label>
         <ul>
-         <li><a href="<?php echo e(url('welcome')); ?>">Home</a></li>
+         <li><a class="current1"href="<?php echo e(url('welcome')); ?>">Home</a></li>
          <li><a href="/">Products</a></li>
          <li><a href="/">Contact Us</a></li>
          <li><a href="<?php echo e(url('registrationpage')); ?>">Login</a></li>         
-         <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:30px"></i></a></li>
+         <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:25px"></i></a></li>
+         <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
         </ul>
+    
         
     </nav>
     
     <div class="welcome-page-header">
-        <H1>
-            13Keys
-        </H1>
+        
     </div>
     <p1>
         <div class="welcome-text">
@@ -76,6 +77,49 @@
     <footer>
     </footer>
     </div>
+
+
+
 </body>
+
+ <script>
+     var moonicon = document.getElementById("moonicon");
+
+     /* Explaniation of the JavaScript to help with understanding.
+
+     Local storage saves user's preference. On refresh nothing will be changed and coming back to the website, nothing will be changed.
+     Line 99 - null means if the theme is set to nothing, then the default theme will be light
+     Line 103 - collects the local data and retrieves the theme picked. The if statements state that if it is light, then it will remove the dark theme. 
+     I.e., if the icon is clicked while it is dark then it will remove the dark and put the light. Vice versa for the else if statement, this time it will add dark if it is light.
+     Line 112 - this is the part which allows a click to swap between the themes. 'Dark' refers to the css in main.css, it will call on that css if the moon-icon is clicked.
+     Line 115 - this is telling the storage to store 'dark' under the variable 'dark-theme', or if 'dark' css is not activated (else) store the current theme under 'light-theme' variable.
+
+     */
+
+     if(localStorage.getItem("theme") == null){
+        localStorage.setItem("theme", "light-theme");
+     }
+
+     let localData = localStorage.getItem("theme");
+
+     if(localData == "light-theme"){
+        document.body.classList.remove("dark");
+
+     } else if (localData == "dark-theme"){
+        document.body.classList.add("dark");
+     }
+        
+     moonicon.onclick = function(){
+        document.body.classList.toggle("dark");
+
+     if(document.body.classList.contains("dark")){
+        localStorage.setItem("theme", "dark-theme");
+     } else {
+        localStorage.setItem("theme", "light-theme");
+     }
+
+     }
+     
+ </script>
 
 </html><?php /**PATH C:\Users\ndham\OneDrive\Documents\GitHub\Team-13\resources\views/welcome.blade.php ENDPATH**/ ?>
