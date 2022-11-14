@@ -4,10 +4,35 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   @vite('resources/css/app.css')
+
+  <!-- Fonts -->
+  <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Styles -->
+   <link href="{{ url('css/main.css') }}" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <title>Login Page</title>
 </head>
 <body class="h-screen">
+  <nav>
+   
+        
+    <input type="checkbox" id="box">
+    <label for="box" class="boxbtn">
+        <i class="fa fa-bars"></i>
+    </label>
+    <label class="logo" href="{{ url('welcome')}}">13Keys</label>
+    <ul>
+     <li><a class="current1"href="{{ url('welcome')}}">Home</a></li>
+     <li><a href="/">Products</a></li>
+     <li><a href="/">Contact Us</a></li>
+     <li><a href="{{ url('registrationpage')}}">Login</a></li>         
+     <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:25px"></i></a></li>
+     <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
+    </ul>
+
+    
+</nav>
   <!-- Main bg -->
   <div class="bg-rose-400 min h-screen flex items-center justify-center">
    <!--Login Box-->
@@ -36,7 +61,7 @@
         <hr class="border-gray-400">
       </div>
 
-      <button class="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300">
+      <button class="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 text-black">
         <svg class="mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="25px">
           <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z" />
           <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z" />
@@ -45,7 +70,7 @@
         </svg>
         Login with Google
       </button>
-      <button class="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300">
+      <button class="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 text-black">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-apple mr-1" viewBox="0 0 16 16">
           <path d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282Z"/>
           <path d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282Z"/>
@@ -58,7 +83,7 @@
 
       <div class="mt-3 text-xs flex justify-between-items-center text-indigo-500">
         <p>Don't have an account?</p>
-        <button class="py-1.5 px-5 ml-1 mb-2 bg-white border rounded-xl hover:scale-110 duration-300 text-indigo-500">Register</button>
+        <button class="py-1.5 px-5 ml-1 mb-2 bg-white border rounded-xl hover:scale-110 duration-300 text-indigo-500"><a href="{{ url('registrationpage')}}">Register</a></button>
       </div>
    </div>
     <!--Image-->
@@ -68,4 +93,36 @@
    </div>
   </div>
 </body>
+<script>
+  var moonicon = document.getElementById("moonicon");
+
+  /* 
+  Explaniation of the JavaScript is explained in the welcome.blade.
+  */
+
+  if(localStorage.getItem("theme") == null){
+     localStorage.setItem("theme", "light-theme");
+  }
+
+  let localData = localStorage.getItem("theme");
+
+  if(localData == "light-theme"){
+     document.body.classList.remove("dark");
+
+  } else if (localData == "dark-theme"){
+     document.body.classList.add("dark");
+  }
+     
+  moonicon.onclick = function(){
+     document.body.classList.toggle("dark");
+
+  if(document.body.classList.contains("dark")){
+     localStorage.setItem("theme", "dark-theme");
+  } else {
+     localStorage.setItem("theme", "light-theme");
+  }
+
+  }
+  
+</script>
 </html>
