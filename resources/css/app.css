@@ -1,7 +1,6 @@
-<<<<<<< HEAD
-.center{
-    text-align: center;
-}
-=======
 @import "@fortawesome/fontawesome-free/css/all.css";
->>>>>>> Navneet-Development
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
