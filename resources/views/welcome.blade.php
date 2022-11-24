@@ -28,7 +28,7 @@
             
             <li><a class="current1" href="{{ url('welcome')}}">Home</a></li>
             <li><a href="/">Products</a></li>
-            <li><a href="/">Contact Us</a></li>
+            <li><a href="{{ url('aboutus')}}">Contact Us</a></li>
             <li><a href="{{ url('loginin')}}">Login</a></li>
             <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:25px"></i></a></li>
             <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
