@@ -1,0 +1,239 @@
+/*Home page*/
+
+.welcome-page-header {
+    text-align: center;
+    width: 100%;
+    font-size: 30px;
+    padding: 1px;
+    background-color: var(--p-colour); 
+    color: var(--s-colour);
+}
+
+footer{
+    background-color: var(--p-colour);
+    width: 100%;
+    box-shadow: 0 25vh 0 25vh var(--p-colour);
+}
+
+.about-us {
+    text-align: center;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    color: var(--s-colour);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 18px;
+}
+
+.about-us-footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100;
+    color: var(--s-colour);
+    padding-bottom: 15px;
+    padding-top: 10px;
+    font-size: 20px;
+    background-color: var(--head-colour);
+    height: 78px;
+    width: 100%;
+}
+
+.welcome-text {
+    text-align: center;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    color: var(--s-colour);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 18px;
+}
+
+body {
+    font-family: 'serif';
+    background-color: var(--p-colour);
+    color: var(--s-colour);
+    font-size: 18px;
+}
+
+label{
+    display: inline-block;
+    width: 75px;
+    text-align: right;
+    margin: 5px;
+}
+
+/*Navigation bar*/
+
+*{
+    padding: 5;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav{
+    background-color: var(--head-colour);
+    height: 78px;
+    width: 100%;
+
+}
+
+label.logo{
+    color: var(--s-colour);
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+nav ul{
+float: right;
+margin-right: 20px;
+
+}
+
+nav ul li{
+display: inline-block;
+line-height: 80px;
+margin: 0 5px;
+
+}
+
+nav ul li a{
+color: var(--s-colour);
+font-size: 17px;
+padding: 7px 13px;
+border-radius: 3px;
+text-transform: uppercase;
+
+}
+
+#moonicon{
+color: var(--s-colour);
+font-size: 17px;
+padding: 7px 13px;
+border-radius: 3px;
+text-transform: uppercase;
+cursor: pointer;
+
+}
+
+#moonicon:hover{
+    background: none;
+    color: var(--h-colour);
+    transition: .5s;
+}
+
+a.current1, a.current2, a:hover{
+background: none;
+color: var(--h-colour);
+transition: .5s;
+
+}
+
+
+.boxbtn{
+    font-size: 30px;
+    color: var(--s-colour);
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#box{
+    display: none;
+}
+
+/*Mobile responsive for Navigation Bar - 980 - > 750 */
+
+@media (max-width: 980px) {
+    label.logo{
+        font-size: 35px;
+        padding-left: 55px;
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 750px) {
+    .boxbtn{
+        border-radius: 0%;
+        display: block;
+        top: 10px;
+    }
+
+ ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: var(--p-colour);
+    top: 75px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+ }
+ 
+ nav ul li{
+    display: block;
+
+ }
+ 
+ nav ul li a{
+ font-size: 20px;
+
+}
+
+a.current1, a.current2, a:hover{
+    background: none;
+    color: var(--h-colour);
+}
+
+#box:checked ~ ul{
+    left: 0;
+}
+
+}
+
+
+
+
+/*Nav bar - Dark theme icons */
+
+:root{
+    /*Primary (main background) and Secondary Colours (text)*/
+    --p-colour: #e0e7ff;
+    --s-colour: #1f1d1d;
+    /*Hover Colour*/
+    --h-colour: #0082e6;
+    /*Header Colours Used for Navbar and Header*/
+    --head-colour: #fb7185;
+
+    
+}
+
+.dark{
+    /*Primary (main background) and Secondary Colours (text) for mai*/
+    --p-colour: #1f1d1d;
+    --s-colour: #eaf0fd;
+    /*Hover Colour*/
+    --h-colour: #c57a09;
+    /*Header Colours Used for Navbar and Header*/
+    --head-colour: #2e2c2c;
+    
+    
+
+}
+
+
