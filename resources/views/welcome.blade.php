@@ -26,7 +26,7 @@
         <label class="logo" href="{{ url('welcome')}}">13Keys</label>
         <ul>
             <li><a class="current1" href="{{ url('welcome')}}">Home</a></li>
-            <li><a href="/">Products</a></li>
+            <li><a href="{{ url('productspage')}}">Products</a></li>
             <li><a href="/">Contact Us</a></li>
             <li><a href="{{ url('loginin')}}">Login</a></li>
             <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:25px"></i></a></li>
