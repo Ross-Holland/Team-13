@@ -40,6 +40,7 @@ footer{
     width: 100%;
 }
 
+
 .welcome-text {
     text-align: center;
     width: 50%;
@@ -213,12 +214,20 @@ a.current1, a.current2, a:hover{
 
 :root{
     /*Primary (main background) and Secondary Colours (text)*/
+
     --p-colour: #e0e7ff;
+
+    --p-colour: #e6eaf7;
+
     --s-colour: #1f1d1d;
     /*Hover Colour*/
     --h-colour: #0082e6;
     /*Header Colours Used for Navbar and Header*/
+t
     --head-colour: #fb7185;
+
+    --head-colour: #a9e4ff;
+
 
     
 }
@@ -236,4 +245,27 @@ a.current1, a.current2, a:hover{
 
 }
 
+
+
+
+/*container for the homepage carousel */
+.carousel-container{
+    width: 500px;
+    position: center;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel-images{
+    height:500px;
+    width:auto;
+    max-width:500px;
+    position: center;
+}
+
+.carousel-img{
+    height: 100%;
+    width: 100%;
+    
+}
 
