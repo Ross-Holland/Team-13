@@ -28,3 +28,8 @@ Route::get('/registrationpage', function () {
 Route::get('/login', function () {
     return view('login');
 });
+
+
+Route::get('/productspage', function () {
+    return view('productspage');
+});
