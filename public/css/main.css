@@ -15,32 +15,6 @@ footer{
     box-shadow: 0 25vh 0 25vh var(--p-colour);
 }
 
-.about-us {
-    text-align: center;
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    color: var(--s-colour);
-    padding-top: 15px;
-    padding-bottom: 15px;
-    font-size: 18px;
-}
-
-.about-us-footer{
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100;
-    color: var(--s-colour);
-    padding-bottom: 15px;
-    padding-top: 10px;
-    font-size: 20px;
-    background-color: var(--head-colour);
-    height: 78px;
-    width: 100%;
-}
-
-
 .welcome-text {
     text-align: center;
     width: 50%;
@@ -214,20 +188,12 @@ a.current1, a.current2, a:hover{
 
 :root{
     /*Primary (main background) and Secondary Colours (text)*/
-
-    --p-colour: #e0e7ff;
-
     --p-colour: #e6eaf7;
-
     --s-colour: #1f1d1d;
     /*Hover Colour*/
     --h-colour: #0082e6;
     /*Header Colours Used for Navbar and Header*/
-t
-    --head-colour: #fb7185;
-
     --head-colour: #a9e4ff;
-
 
     
 }
@@ -244,9 +210,6 @@ t
     
 
 }
-
-
-
 
 /*container for the homepage carousel */
 .carousel-container{
@@ -268,4 +231,3 @@ t
     width: 100%;
     
 }
-
