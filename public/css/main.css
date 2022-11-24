@@ -211,4 +211,20 @@ a.current1, a.current2, a:hover{
 
 }
 
+/*container for the homepage carousel */
+.carousel-container{
+    width: 250px;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+}
 
+.carousel-images{
+    display: none;
+}
+
+.carousel-img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
