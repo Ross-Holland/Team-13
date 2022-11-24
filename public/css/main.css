@@ -188,12 +188,12 @@ a.current1, a.current2, a:hover{
 
 :root{
     /*Primary (main background) and Secondary Colours (text)*/
-    --p-colour: #ffffff;
+    --p-colour: #e6eaf7;
     --s-colour: #1f1d1d;
     /*Hover Colour*/
     --h-colour: #0066b4;
     /*Header Colours Used for Navbar and Header*/
-    --head-colour: #c8c8c8;
+    --head-colour: #a9e4ff;
 
     
 }
@@ -213,20 +213,23 @@ a.current1, a.current2, a:hover{
 
 /*container for the homepage carousel */
 .carousel-container{
-    width: 250px;
-    position: relative;
+    width: 500px;
+    position: center;
     margin: auto;
     overflow: hidden;
 }
 
 .carousel-images{
-    display: none;
+    height:500px;
+    width:auto;
+    max-width:500px;
+    position: center;
 }
 
 .carousel-img{
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    
 }
 
 
