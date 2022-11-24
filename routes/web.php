@@ -27,4 +27,10 @@ Route::get('/registrationpage', function () {
 
 Route::get('/loginin', function () {
     return view('loginin');
+
+});
+
+Route::get('/aboutus', function () {
+    return view('aboutus');
+
 });
