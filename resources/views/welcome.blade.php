@@ -23,8 +23,9 @@
         <label for="box" class="boxbtn">
             <i class="fa fa-bars"></i>
         </label>
-        <label class="logo" href="{{ url('welcome')}}">13Keys</label>
+        <a href="{{ url('welcome')}}"><img src="images/13keys_-_black.png" width="125" height="85" class="logo" alt=""></a>
         <ul>
+            
             <li><a class="current1" href="{{ url('welcome')}}">Home</a></li>
             <li><a href="/">Products</a></li>
             <li><a href="/">Contact Us</a></li>
@@ -71,8 +72,10 @@
         </div>
 
         <div class="carousel-images">
-            <img class="carousel-img" src="black_bass_guitar.jpg">
+            <img class="carousel-img" src="images/eguitar.png">
         </div>
+
+       
     </div>
 
 
