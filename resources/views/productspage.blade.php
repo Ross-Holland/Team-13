@@ -24,12 +24,12 @@
             <i class="fa fa-bars"></i>
         </label>
         
-          <label class="logo" href="{{ url('welcome')}}"><img src="13keys - black.png" alt="Logo" width= 200px height= 150px></label>
+        <a href="{{ url('welcome')}}"><img src="images/13keys_-_black.png" width="125" height="85" class="logo" alt=""></a>
         <ul>
          <li><a  href="{{ url('welcome')}}">Home</a></li>
          <li><a class="current3"href="{{ url('productspage')}}">Products</a></li>
          <li><a href="/">Contact Us</a></li>
-         <li><a href="{{ url('registrationpage')}}">Login</a></li>         
+         <li><a href="{{ url('login')}}">Login</a></li>         
          <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:25px"></i></a></li>
          <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
         </ul>
@@ -68,27 +68,27 @@
     <div class = "product-container">
 
         <div class = "product-item">
-            <a href="productid=0"><img src="electric guitar dept.png" ></a>
+            <a href="productid=0"><img src="electric_guitar_dept.png" ></a>
             <span class = "product-name">Fendre 5000 electro acoustic dlrx in sunburst</span>
             <div class = "price">£1,800</div>
         </div>
         <div class = "product-item">
-            <a href="productid=0"><img src="bass dept.png"></a>
+            <a href="productid=0"><img src="bass_dept.png"></a>
             <span class = "product-name">Fendre 5000 electro acoustic dlrx in sunburst</span>
             <div class = "price">£1,800</div>
         </div>
         <div class = "product-item">
-            <a href="productid=0"><img src="acoustic guitar dept.png"></a>
+            <a href="productid=0"><img src="acoustic_guitar_dept.png"></a>
             <span class = "product-name">Fendre 5000 electro acoustic dlrx in sunburst</span>
             <div class = "price">£1,800</div>
         </div>
         <div class = "product-item">
-            <a href="productid=0"><img src="amp dept.png"></a>
+            <a href="productid=0"><img src="amp_dept.png"></a>
             <span class = "product-name">Fendre 5000 electro acoustic dlrx in sunburst</span>
             <div class = "price">£1,800</div>
         </div>
         <div class = "product-item">
-            <a href="productid=0"><img src="piano dept.png"></a>
+            <a href="productid=0"><img src="piano_dept.png"></a>
             <span class = "product-name">Fendre 5000 electro acoustic dlrx in sunburst</span>
             <div class = "price">£1,800</div>
         </div>
@@ -103,7 +103,7 @@
             <div class = "price">£1,800</div>
         </div>
         <div class = "product-item">
-            <a href="productid=0"><img src="drums dept.png"></a>
+            <a href="productid=0"><img src="drums_dept.png"></a>
             <span class = "product-name">Fendre 5000 electro acoustic dlrx in sunburst</span>
             <div class = "price">£1,800</div>
         </div>

@@ -25,13 +25,12 @@
         </label>
         <a href="<?php echo e(url('welcome')); ?>"><img src="images/13keys_-_black.png" width="125" height="85" class="logo" alt=""></a>
         <ul>
-            
-            <li><a class="current1" href="<?php echo e(url('welcome')); ?>">Home</a></li>
-            <li><a href="/">Products</a></li>
-            <li><a href="/">Contact Us</a></li>
-            <li><a href="<?php echo e(url('loginin')); ?>">Login</a></li>
-            <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:25px"></i></a></li>
-            <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
+         <li><a class="current1"href="<?php echo e(url('welcome')); ?>">Home</a></li>
+         <li><a href="<?php echo e(url('productspage')); ?>">Products</a></li>
+         <li><a href="/">Contact Us</a></li>
+         <li><a href="<?php echo e(url('login')); ?>">Login</a></li>     
+         <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:25px"></i></a></li>
+         <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
         </ul>
 
 
