@@ -33,3 +33,7 @@ Route::get('/login', function () {
 Route::get('/productspage', function () {
     return view('productspage');
 });
+
+Route::get('/aboutus', function () {
+    return view('aboutus');
+});
