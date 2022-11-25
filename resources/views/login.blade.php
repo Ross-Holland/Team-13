@@ -31,13 +31,13 @@
             <h2 class="login-title">Login</h2>
             <p class="welcome-text">Welcome! Please sign in below.</p>
             </div>
-            <input type="email" name="email" placeholder="Email" required/>
-            <input type="password" name="password" placeholder="Password" required/>
+            <input class="login-email" type="email" name="email" placeholder="Email" required/>
+            <input class="login-password" type="password" name="password" placeholder="Password" required/>
             <button class="login-button">Login</button>
             <hr class="line-break">
-            <div class="register-wrap">
-            <p class="register">Don't have an account?</p>
-            <button class="register-button" href = "#">Register</button>
+            <div class="login-register-wrap">
+            <p class="login-register">Don't have an account?</p>
+            <button class="login-register-button" href = "#">Register</button>
             </div>
           </form>
         </div>
