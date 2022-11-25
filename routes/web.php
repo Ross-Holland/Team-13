@@ -25,10 +25,11 @@ Route::get('/registrationpage', function () {
     return view('registrationpage');
 });
 
-Route::get('/loginin', function () {
-    return view('loginin');
+Route::get('/login', function () {
+    return view('login');
 });
 
-Route::get('/aboutus', function () {
-    return view('aboutus');
+
+Route::get('/productspage', function () {
+    return view('productspage');
 });
