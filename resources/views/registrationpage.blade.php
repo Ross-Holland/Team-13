@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <!-- Styles -->
-    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/register.css" rel="stylesheet">
     
 
 </head>
@@ -34,10 +34,44 @@
          <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
         </ul>
 
-        
-
     </nav>
-    
+    <div class = "main">
+      <div class = "register">
+          <h2>Register Here </h2>
+          <form id="register" method = "post">
+          <label>First Name:</label>
+          <br>
+          <input type = "text" name="fname"
+          id="name" placeholder="Enter Your First Name">
+          <br><br>
+          <label>Last Name:</label>
+          <br>
+          <input type = "text" name="lname"
+          id="name" placeholder="Enter Your Last Name">   
+          <br><br>
+          <label>Email :</label>
+          <br>
+          <input type ="email" name="email"id="name" placeholder="Enter a valid Email">
+          <br><br>
+          <label>Password: </label>
+          <br>
+          <input type ="password" id ="name" name ="pswrd" minlength="8" placeholder="Enter a new password">
+          <br><br>
+          <label>Confirm Password:</label>
+          <br>
+          <input type ="password" id ="name" name ="cpswrd" minlength="8" placeholder ="Re-enter Password">
+          <br><br>
+          <label>Address: </label>
+          <br>
+          <input type = "text" name="fname"
+          id="name" placeholder="Enter Your Address">
+          <br><br>
+          <label for="phone">Enter a phone number:</label>
+          <input type="tel" id="phone" name="phone" placeholder="123-4567-8901" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" required><br>
+          <input type = "submit" value= "Submit" name="submit" id="submit">
+          </form>
+       </div><!--end register-->
+  </div><!--end main-->
 
    
 </body>
