@@ -11,6 +11,7 @@
     <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <!-- Styles -->
     <link href="/css/main.css" rel="stylesheet">
+    <script defer src="/js/productsJS.js" ></script>
     
 
 </head>
@@ -24,7 +25,7 @@
             <i class="fa fa-bars"></i>
         </label>
         
-        <a href="{{ url('welcome')}}"><img src="images/13keys_-_black.png" width="125" height="85" class="logo" alt=""></a>
+          <label class="logo" href="{{ url('welcome')}}"><img src="13keys-black.png" alt="Logo" width= 200px height= 150px></label>
         <ul>
          <li><a  href="{{ url('welcome')}}">Home</a></li>
          <li><a class="current3"href="{{ url('productspage')}}">Products</a></li>
@@ -41,7 +42,7 @@
 
         <div class = "dept-container">
             <div class ="dept">
-                <a href="electric-dept"><h3>ELECTRIC</h3><img src="electric_guitar_dept.png" alt="electric" width= 281.25px height = 375px></a>
+                <h3>ELECTRIC</h3><img src="electric_guitar_dept.png" alt="electric" width= 281.25px height = 375px id= "electricGuitarFilter" >
             </div>
             <div class ="dept">
                 <a href="acoustic-dept"><h3>ACOUSTIC</h3><img src="acoustic_guitar_dept.png" alt="acoustic" width= 281.25px height = 375px></a>
@@ -65,65 +66,52 @@
         <h2>SHOP ALL PRODUCTS</h2>
     </div>
 
+
+ 
     <div class = "product-container">
 
-        <div class = "product-item">
-            <a href="productid=0"><img src="electric_guitar_dept.png" ></a>
-            <span class = "product-name">Fendre 5000 electro acoustic dlrx in sunburst</span>
-            <div class = "price">£1,800</div>
-        </div>
-        <div class = "product-item">
-            <a href="productid=0"><img src="bass_dept.png"></a>
-            <span class = "product-name">Fendre 5000 electro acoustic dlrx in sunburst</span>
-            <div class = "price">£1,800</div>
-        </div>
-        <div class = "product-item">
-            <a href="productid=0"><img src="acoustic_guitar_dept.png"></a>
-            <span class = "product-name">Fendre 5000 electro acoustic dlrx in sunburst</span>
-            <div class = "price">£1,800</div>
-        </div>
-        <div class = "product-item">
-            <a href="productid=0"><img src="amp_dept.png"></a>
-            <span class = "product-name">Fendre 5000 electro acoustic dlrx in sunburst</span>
-            <div class = "price">£1,800</div>
-        </div>
-        <div class = "product-item">
-            <a href="productid=0"><img src="piano_dept.png"></a>
-            <span class = "product-name">Fendre 5000 electro acoustic dlrx in sunburst</span>
-            <div class = "price">£1,800</div>
-        </div>
-        <div class = "product-item">
-            <a href="productid=0"><img src="dark_bass_4__1.png"></a>
-            <span class = "product-name">Fendre 5000 electro acoustic dlrx in sunburst</span>
-            <div class = "price">£1,800</div>
-        </div>
-        <div class = "product-item">
-            <a href="productid=0"><img src="white_electric_guitar_1__1.png"></a>
-            <span class = "product-name">Fendre 5000 electro acoustic dlrx in sunburst</span>
-            <div class = "price">£1,800</div>
-        </div>
-        <div class = "product-item">
-            <a href="productid=0"><img src="drums_dept.png"></a>
-            <span class = "product-name">Fendre 5000 electro acoustic dlrx in sunburst</span>
-            <div class = "price">£1,800</div>
-        </div>
-        <div class = "product-item">
-            <a href="productid=0"><img src="marshall_amp_6__1.png"></a>
-            <span class = "product-name">Fendre 5000 electro acoustic dlrx in sunburst</span>
-            <div class = "price">£1,800</div>
-        </div>
-        <div class = "product-item">
-            <a href="productid=0"><img src="dark_acoustic_guitar_3__1_.png"></a>
-            <span class = "product-name">Fendre 5000 electro acoustic dlrx in sunburst</span>
-            <div class = "price">£1,800</div>
-        </div>
+        <?php
+
+            $db_host = 'localhost';
+            $db_name = 'e-commercedb';
+            $username = 'root';
+
+            try {
+                $db = new PDO("mysql:dbname=$db_name;host=$db_host", $username); 
+                #$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                try {
+                    $query="SELECT  * FROM  products ";
+                    $rows =  $db->query($query);
+                        
+                    if ( $rows && $rows->rowCount()> 0) {
+                        while  ($row =  $rows->fetch())	{
+                            ?>
+                            <div class = "product-item">
+                            <?php
+                            echo '<tr><td><a href="productid="' . $row['id'] . '><img src ="' . $row['Image'] . '" width= 250px height= 350px></a></td>';
+                            echo '<td><span class="product-name">' . $row['Name'] . '</span></td>';
+                            echo '<td><div class="price">£' . $row['Price'] . '</div></td>';
+                            echo '<td><span class="instrument-type">' . $row['Instrument Type'] . '</span></td></tr>';
+                            ?>
+                            </div>
+                            <?php
+                        }
+                    }
+                    else {
+                        echo  "<p>No record in the list.</p>\n";
+                    }
+                }
+                catch (PDOexception $ex){
+                    echo "Sorry, a database error occurred! <br>";
+                    echo "Error details: <em>". $ex->getMessage()."</em>";
+                }
+            } catch(PDOException $ex) {
+                echo("Failed to connect to the database.<br>");
+                echo($ex->getMessage());
+                exit;
+            }
+        ?>
     </div>
-       
- 
-
-
-
-
 
 
 

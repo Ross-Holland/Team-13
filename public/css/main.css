@@ -335,6 +335,7 @@ a.current1, a.current2, a:hover{
     padding-bottom: 10px;
     text-transform: uppercase;
     border-bottom: 1px solid rgb(71, 71, 71);
+    min-height: 50px;
 }
 .price{
     color: var(--s-colour);
@@ -344,6 +345,9 @@ a.current1, a.current2, a:hover{
     border-bottom: 1px solid rgb(71, 71, 71);
 }
 
+.instrument-type{
+    visibility: hidden;
+}
 
 @media screen and (max-width: 1200px){
     .product-item{
