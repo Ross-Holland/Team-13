@@ -27,13 +27,18 @@
         <div class="forms-wrap">
           
           <form action="" class="login">
-            <h2 class="title">Login</h2>
+            <div class="title-wrap">
+            <h2 class="login-title">Login</h2>
             <p class="welcome-text">Welcome! Please sign in below.</p>
+            </div>
             <input type="email" name="email" placeholder="Email" required/>
             <input type="password" name="password" placeholder="Password" required/>
             <button class="login-button">Login</button>
+            <hr class="line-break">
+            <div class="register-wrap">
             <p class="register">Don't have an account?</p>
             <button class="register-button" href = "#">Register</button>
+            </div>
           </form>
         </div>
         <div class="img">
