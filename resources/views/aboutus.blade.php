@@ -27,8 +27,8 @@
         <ul>
             
             <li><a class="current1" href="{{ url('welcome')}}">Home</a></li>
-            <li><a href="/">Products</a></li>
-            <li><a href="/">Contact Us</a></li>
+            <li><a href="{{  url('productspage') }}">Products</a></li>
+            <li><a href="{{ url('aboutus') }}">Contact Us</a></li>
             <li><a href="{{ url('loginin')}}">Login</a></li>
             <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:25px"></i></a></li>
             <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
@@ -43,9 +43,9 @@
         About us
         <br>
         <br>
-        We are 13Keys the market leading e-commerce store forbuying instruments.
+        We are 13Keys the market leading e-commerce store for buying instruments.
         As a team we thrive to give our customers the best service we can by not only selling the highest quality equipment possible
-        but also give our customers the best experience while purchasing their new equipment>
+        but also give our customers the best experience while purchasing their new equipment.
         <br>
         <br>
         <br>
@@ -54,7 +54,26 @@
         <br>
         We only sell the highest quality equipment so it'll last a lifetime.
         <br>
-        We promise excellent customer service from beginning to end and even after.   
+        We promise excellent customer service from beginning to end and even after.
+        <br>
+        All our purchases come with free premium shipping.
+        <br>
+        In case of accidents all purchases come with free 3 year warrenty for fixes or replacements.   
+        <br>
+        Our excelent stock means You'll find exactly what u need.
+        <br>
+        If you decide it isn't what you want you can return it within 30 days.
+        <br>
+        <br>
+        <br>
+        News letter
+        <br>
+        <br>
+        Want to keep up to date with all our latest news and discounts?
+        <br>
+        Join our news letter here!
+        <br>
+        <a id="nothing" href="#">Click here</a>
 </p1>
 
 <footer>
@@ -63,26 +82,6 @@
         <br>
         Twitter: <a id="nothing" href="#">13Keys</a> LinkedIn: <a id="nothing" href="#">13Keys</a> Email: <a id="nothing" href="#">13Keys</a>
 </footer>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <script>
         var moonicon = document.getElementById("moonicon");
