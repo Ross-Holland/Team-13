@@ -27,8 +27,8 @@
         <a href="{{ url('welcome')}}"><img src="images/13keys_-_black.png" width="125" height="85" class="logo" alt=""></a>
         <ul>
          <li><a  href="{{ url('welcome')}}">Home</a></li>
-         <li><a href="/">Products</a></li>
-         <li><a href="/">Contact Us</a></li>
+         <li><a href="productspage">Products</a></li>
+         <li><a href="aboutus">Contact Us</a></li>
          <li><a class="current2"href="{{ url('registrationpage')}}">Login</a></li>         
          <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:25px"></i></a></li>
          <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>

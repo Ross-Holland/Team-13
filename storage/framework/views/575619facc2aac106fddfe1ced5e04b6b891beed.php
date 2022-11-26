@@ -27,17 +27,57 @@
         <a href="<?php echo e(url('welcome')); ?>"><img src="images/13keys_-_black.png" width="125" height="85" class="logo" alt=""></a>
         <ul>
          <li><a  href="<?php echo e(url('welcome')); ?>">Home</a></li>
-         <li><a href="/">Products</a></li>
-         <li><a href="/">Contact Us</a></li>
+         <li><a href="productspage">Products</a></li>
+         <li><a href="aboutus">Contact Us</a></li>
          <li><a class="current2"href="<?php echo e(url('registrationpage')); ?>">Login</a></li>         
          <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:25px"></i></a></li>
          <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
         </ul>
 
-        
-
     </nav>
-    
+
+    <div class = "registration-box">
+      <div class = "register">
+          <h2 class="registration-title">Registration form, please complete
+            <br> to register with us!</h2>
+          <br>
+          <form id="register" method = "post">
+          <?php echo e(csrf_field()); ?>
+
+          <div class="registration-text">First Name:</div>
+          <input type = "text" name="Fname" class="name-input name-shadow"
+          id="Fname" placeholder="Enter Your First Name">
+          <br>
+          <br>
+          <div class="registration-text">Last Name:</div>
+          <input type = "text" name="Lname" class="name-input name-shadow"
+          id="Lname" placeholder="Enter Your Last Name">   
+          <br>
+          <br>
+          <div class="registration-text">Email Address:</div>
+          <input type ="email" name="EmailAddress" class="name-input name-shadow" id="EmailAddress" placeholder="Enter a valid Email">
+          <br>
+          <br>
+          <div class="registration-text">Password:</div>
+          <input type ="Password" id ="Password" name ="Password" class="name-input name-shadow" minlength="8" placeholder="Enter a new password">
+          <br>
+          <br>
+          <div class="registration-text">Confirm Password:</div>
+          <input type ="password" id ="name" name ="cpswrd" class="name-input name-shadow" minlength="8" placeholder ="Re-enter Password">
+          <br>
+          <br>
+          <div class="registration-text">Address:</div>
+          <input type = "text" name="fname" class="name-input name-shadow"
+          id="name" placeholder="Enter Your Address">
+          <br>
+          <br>
+          <div class="registration-text" for="phone">Enter a phone number:</div>
+          <input type="tel" id="phone" name="phone" class="name-input name-shadow" placeholder="01234567890" pattern="[0-9]{11}" required><br>
+          <br>
+          <input type = "submit" value= "Submit" name="submit" class="submit-button" id="submit">
+          </form>
+       </div><!--end register-->
+  </div><!--end main-->
 
    
 </body>

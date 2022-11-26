@@ -434,11 +434,11 @@ a.current1, a.current2, a:hover{
     outline:none;
     border:none;
     border-radius:5px;
-    color:#fff;
+    color:var(--p-colour);
     font-size:18px;
     font-weight:600;
     letter-spacing: 1px;
-    background-color: #fb7185;;
+    background-color: var(--s-colour);
 }
 
 

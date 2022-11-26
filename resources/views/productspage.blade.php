@@ -1,3 +1,9 @@
+<?php
+// use App\Http\Controllers\ProductController;
+// $total=ProductController::cartItem();
+
+?>
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -24,16 +30,17 @@
         <label for="box" class="boxbtn">
             <i class="fa fa-bars"></i>
         </label>
-        
-          <label class="logo" href="{{ url('welcome')}}"><img src="13keys-black.png" alt="Logo" width= 200px height= 150px></label>
+        <a href="{{ url('welcome')}}"><img src="images/13keys_-_black.png" width="125" height="85" class="logo" alt=""></a>
         <ul>
-         <li><a  href="{{ url('welcome')}}">Home</a></li>
-         <li><a class="current3"href="{{ url('productspage')}}">Products</a></li>
-         <li><a href="/">Contact Us</a></li>
-         <li><a href="{{ url('login')}}">Login</a></li>         
+         <li><a href="{{ url('welcome')}}">Home</a></li>
+         <li><a class="current1" href="{{ url('productspage')}}">Products</a></li>
+         <li><a href="{{ url('aboutus') }}">Contact Us</a></li>
+         <li><a href="{{ url('login')}}">Login</a></li>     
          <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:25px"></i></a></li>
          <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
         </ul>
+
+
     </nav>
 
     <div class="departments-header">
@@ -75,9 +82,10 @@
             $db_host = 'localhost';
             $db_name = 'e-commercedb';
             $username = 'root';
+            $password = '123';
 
             try {
-                $db = new PDO("mysql:dbname=$db_name;host=$db_host", $username); 
+                $db = new PDO("mysql:dbname=$db_name;host=$db_host", $username, $password); 
                 #$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 try {
                     $query="SELECT  * FROM  products ";
@@ -87,6 +95,11 @@
                         while  ($row =  $rows->fetch())	{
                             ?>
                             <div class = "product-item">
+                            <form action="/add_to_cart" method="POST">
+                                @csrf
+                                <input type="hidden" name="product_id" value="{{ $row['id'] }}">
+                                <button class="btn btn-primary">Add to Cart</button>
+                            </form>
                             <?php
                             echo '<tr><td><a href="productid="' . $row['id'] . '><img src ="' . $row['Image'] . '" width= 250px height= 350px></a></td>';
                             echo '<td><span class="product-name">' . $row['Name'] . '</span></td>';

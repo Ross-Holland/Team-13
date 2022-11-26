@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\User;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -50,3 +51,4 @@ Route::post('/registrationpage', function(){
 });
 
 
+Route::post("add_to_cart", [ProductController::class, 'addToCart']);

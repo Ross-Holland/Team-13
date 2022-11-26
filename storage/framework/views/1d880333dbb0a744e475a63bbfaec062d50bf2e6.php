@@ -27,7 +27,7 @@
         <ul>
          <li><a class="current1"href="<?php echo e(url('welcome')); ?>">Home</a></li>
          <li><a href="<?php echo e(url('productspage')); ?>">Products</a></li>
-         <li><a href="/">Contact Us</a></li>
+         <li><a href="<?php echo e(url('aboutus')); ?>">Contact Us</a></li>
          <li><a href="<?php echo e(url('login')); ?>">Login</a></li>     
          <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:25px"></i></a></li>
          <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
@@ -60,7 +60,7 @@
         Don't have an account with us?
         <br>
         <br>
-        <a href="<?php echo e(url('/registrationpage')); ?>"> <button type="button" class="???"> Register Here! </button></a>
+        <a href="<?php echo e(url('/registrationpage')); ?>"> <button type="button" class="submit-button"> Register Here! </button></a>
     </p2>
     <br>
     <br>
