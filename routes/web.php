@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,3 +38,15 @@ Route::get('/productspage', function () {
 Route::get('/aboutus', function () {
     return view('aboutus');
 });
+
+Route::post('/registrationpage', function(){
+    $user = new User();
+    $user->Firstname = request('Fname');
+    $user->Lastname = request('Lname');
+    $user->EmailAddress = request('EmailAddress');
+    $user->Password = request('Password');
+    $user->save();
+    return redirect('/welcome');
+});
+
+

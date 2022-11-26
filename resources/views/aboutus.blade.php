@@ -43,7 +43,7 @@
         About us
         <br>
         <br>
-        We are 13Keys the market leading e-commerce store forbuying instruments.
+        We are 13Keys the market leading e-commerce store for buying instruments.
         As a team we thrive to give our customers the best service we can by not only selling the highest quality equipment possible
         but also give our customers the best experience while purchasing their new equipment>
         <br>

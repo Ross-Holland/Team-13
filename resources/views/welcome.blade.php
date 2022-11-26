@@ -60,7 +60,7 @@
         Don't have an account with us?
         <br>
         <br>
-        <a href="{{url('/registrationpage')}}"> <button type="button" class="???"> Register Here! </button></a>
+        <a href="{{url('/registrationpage')}}"> <button type="button" class="submit-button"> Register Here! </button></a>
     </p2>
     <br>
     <br>
