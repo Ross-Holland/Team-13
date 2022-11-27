@@ -26,11 +26,12 @@
       <div class="inner-box">
         <div class="forms-wrap">
           
-          <form action="" class="login">
+          <form action="login" method="POST" class="login">
             <div class="title-wrap">
             <h2 class="login-title">Login</h2>
             <p class="welcome-text">Welcome! Please sign in below.</p>
             </div>
+            @csrf
             <input class="login-email" type="email" name="email" placeholder="Email" required/>
             <input class="login-password" type="password" name="password" placeholder="Password" required/>
             <button class="login-button">Login</button>
