@@ -62,7 +62,7 @@
           <br>
           <br>
           <div class="registration-text">Confirm Password:</div>
-          <input type ="password" id ="name" name ="cpswrd" class="name-input name-shadow" minlength="8" placeholder ="Re-enter Password">
+          <input type ="password" id ="confirmPassword" name ="confirmPassword" class="name-input name-shadow" minlength="8" placeholder ="Re-enter Password">
           <br>
           <br>
           <div class="registration-text">Address:</div>
@@ -111,5 +111,22 @@
 
     }
     
+
+    //Creating the Confirm Password script to make sure that the passwords entered are the same.
+
+    var mainPassword = document.getElementById("Password")
+    , confirmPassword = document.getElementById("confirmPassword");
+
+    function validatePassword(){
+    if(mainPassword.value != confirmPassword.value) {
+      confirmPassword.setCustomValidity("Passwords Don't Match");
+    } else {
+    confirmPassword.setCustomValidity('');
+    }
+}
+
+mainPassword.onchange = validatePassword;
+confirmPassword.onkeyup = validatePassword;
+
 </script>
 </html>

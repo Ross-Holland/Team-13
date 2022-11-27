@@ -46,7 +46,7 @@ Route::post('/registrationpage', function(){
     $user->Firstname = request('Fname');
     $user->Lastname = request('Lname');
     $user->EmailAddress = request('EmailAddress');
-    $user->Password = request('Password');
+    $user->Password = bcrypt(request('Password'));
     $user->save();
     return redirect('/welcome');
 });
