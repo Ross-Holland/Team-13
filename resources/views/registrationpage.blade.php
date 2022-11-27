@@ -17,24 +17,28 @@
 
 <body>
     
-    <nav>
+   <nav>
 
-        <input type="checkbox" id="box">
-        <label for="box" class="boxbtn">
-            <i class="fa fa-bars"></i>
-        </label>
-        
-        <a href="{{ url('welcome')}}"><img src="images/13keys_-_black.png" width="125" height="85" class="logo" alt=""></a>
-        <ul>
-         <li><a  href="{{ url('welcome')}}">Home</a></li>
-         <li><a href="productspage">Products</a></li>
-         <li><a href="aboutus">Contact Us</a></li>
-         <li><a class="current2"href="{{ url('registrationpage')}}">Login</a></li>         
-         <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:25px"></i></a></li>
-         <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
-        </ul>
+      <input type="checkbox" id="box">
+      <label for="box" class="boxbtn">
+          <i class="fa fa-bars"></i>
+      </label>
+      <a href="{{ url('welcome')}}"><img src="images/13keys_-_black.png" width="125" height="85" class="logo" alt=""></a>
+      @if(Session::has('user'))
+      <ul>
+       <li><a href="{{ url('welcome')}}">Home</a></li>
+       <li><a class="current1" href="{{ url('productspage')}}">Products</a></li>
+       <li><a href="{{ url('aboutus') }}">Contact Us</a></li>  
+       <li><a href="{{ url('logout')}}">Logout</a></li>
+       <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:25px"></i>({{ $total }})</a></li>
+       <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
+       @else
+       <li><a href="{{ url('login')}}">Login</a></li>
+       @endif
+      </ul>
 
-    </nav>
+
+  </nav>
 
     <div class = "registration-box">
       <div class = "register">
