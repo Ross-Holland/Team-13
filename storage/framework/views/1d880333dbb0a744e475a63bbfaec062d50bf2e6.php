@@ -1,3 +1,8 @@
+<?php
+use App\Http\Controllers\ProductController;
+$total = ProductController::cartItem();
+?>
+
 <!DOCTYPE html>
 <html lang="<?php echo e(str_replace('_', '-', app()->getLocale())); ?>">
 
@@ -24,13 +29,17 @@
             <i class="fa fa-bars"></i>
         </label>
         <a href="<?php echo e(url('welcome')); ?>"><img src="images/13keys_-_black.png" width="125" height="85" class="logo" alt=""></a>
+        <?php if(Session::has('user')): ?>
         <ul>
-         <li><a class="current1"href="<?php echo e(url('welcome')); ?>">Home</a></li>
-         <li><a href="<?php echo e(url('productspage')); ?>">Products</a></li>
-         <li><a href="<?php echo e(url('aboutus')); ?>">Contact Us</a></li>
-         <li><a href="<?php echo e(url('login')); ?>">Login</a></li>     
-         <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:25px"></i></a></li>
+         <li><a class="current1" href="<?php echo e(url('welcome')); ?>">Home</a></li>
+         <li><a  href="<?php echo e(url('productspage')); ?>">Products</a></li>
+         <li><a href="<?php echo e(url('aboutus')); ?>">Contact Us</a></li>  
+         <li><a href="<?php echo e(url('logout')); ?>">Logout</a></li>
+         <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:25px"></i>(<?php echo e($total); ?>)</a></li>
          <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
+         <?php else: ?>
+         <li><a href="<?php echo e(url('login')); ?>">Login</a></li>
+         <?php endif; ?>
         </ul>
 
 
@@ -40,8 +49,9 @@
 
     </div>
     <p1>
+        <?php if(Session::has('user')): ?>
         <div class="welcome-text">
-            Welcome to 13Keys!
+            Welcome <?php echo e(Session::get('user')['Firstname']); ?> to 13Keys!
             <br>
             <br>
             We are the market leading e-commerce store for buying musical instruments.
@@ -53,6 +63,21 @@
             <br>
             <br>
             To login click the Login button in the navigation bar above.
+            <?php else: ?>
+            <div class="welcome-text">
+                Welcome to 13Keys!
+                <br>
+                <br>
+                We are the market leading e-commerce store for buying musical instruments.
+                We are proud to promote our market leading, high quality products to you.
+                <br>
+                <br>
+                To protect our high quality, professional products from our competitors we ask that
+                you login or create an account to gain full access to our website and products.
+                <br>
+                <br>
+                To login click the Login button in the navigation bar above.
+            <?php endif; ?>
     </p1>
     <p2>
         <br>
