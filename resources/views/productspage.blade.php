@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\ProductController;
+use Illuminate\Support\Facades\Session;
 $total=0;
 if(Session::has('user')){
 $total = ProductController::cartItem();
@@ -92,7 +93,7 @@ $total = ProductController::cartItem();
             $password = '123';
 
             try {
-                $db = new PDO("mysql:dbname=$db_name;host=$db_host", $username, $password); 
+                $db = new PDO("mysql:dbname=$db_name;host=$db_host", $username); 
                 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 try {
                     $query="SELECT  * FROM  products ";
