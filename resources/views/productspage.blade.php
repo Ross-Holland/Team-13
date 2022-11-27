@@ -38,19 +38,24 @@ $total = ProductController::cartItem();
         @if(Session::has('user'))
         <ul>
          <li><a href="{{ url('welcome')}}">Home</a></li>
-         <li><a class="current1" href="{{ url('productspage')}}">Products</a></li>
+         <li><a href="{{ url('productspage')}}">Products</a></li>
          <li><a href="{{ url('aboutus') }}">Contact Us</a></li>  
          <li><a href="{{ url('logout')}}">Logout</a></li>
-         <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:25px"></i>({{ $total }})</a></li>
+         <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:25px">({{ $total }})</i></a></li>
          <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
          @else
-         <li><a href="{{ url('login')}}">Login</a></li>
+         <ul>
+           <li><a href="{{ url('welcome')}}">Home</a></li>
+           <li><a href="{{ url('productspage')}}">Products</a></li>
+           <li><a href="{{ url('aboutus') }}">Contact Us</a></li>  
+           <li><a href="{{ url('login')}}">Login</a></li>
+           <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:25px"></i></a></li>
+           <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
          @endif
         </ul>
-
-
+  
+  
     </nav>
-
     <div class="departments-header">
         <h2>DEPARTMENTS</h2>
     </div>
@@ -93,7 +98,7 @@ $total = ProductController::cartItem();
             $password = '123';
 
             try {
-                $db = new PDO("mysql:dbname=$db_name;host=$db_host", $username); 
+                $db = new PDO("mysql:dbname=$db_name;host=$db_host", $username, $password); 
                 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 try {
                     $query="SELECT  * FROM  products ";

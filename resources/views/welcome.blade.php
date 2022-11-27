@@ -31,18 +31,24 @@ $total = ProductController::cartItem();
         <a href="{{ url('welcome')}}"><img src="images/13keys_-_black.png" width="125" height="85" class="logo" alt=""></a>
         @if(Session::has('user'))
         <ul>
-         <li><a class="current1" href="{{ url('welcome')}}">Home</a></li>
-         <li><a  href="{{ url('productspage')}}">Products</a></li>
+         <li><a href="{{ url('welcome')}}">Home</a></li>
+         <li><a href="{{ url('productspage')}}">Products</a></li>
          <li><a href="{{ url('aboutus') }}">Contact Us</a></li>  
          <li><a href="{{ url('logout')}}">Logout</a></li>
-         <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:25px"></i>({{ $total }})</a></li>
+         <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:25px">({{ $total }})</i></a></li>
          <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
          @else
-         <li><a href="{{ url('login')}}">Login</a></li>
+         <ul>
+           <li><a href="{{ url('welcome')}}">Home</a></li>
+           <li><a href="{{ url('productspage')}}">Products</a></li>
+           <li><a href="{{ url('aboutus') }}">Contact Us</a></li>  
+           <li><a href="{{ url('login')}}">Login</a></li>
+           <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:25px"></i></a></li>
+           <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
          @endif
         </ul>
-
-
+  
+  
     </nav>
 
     <div class="welcome-page-header">

@@ -31,18 +31,24 @@ $total = ProductController::cartItem();
         <a href="<?php echo e(url('welcome')); ?>"><img src="images/13keys_-_black.png" width="125" height="85" class="logo" alt=""></a>
         <?php if(Session::has('user')): ?>
         <ul>
-         <li><a class="current1" href="<?php echo e(url('welcome')); ?>">Home</a></li>
-         <li><a  href="<?php echo e(url('productspage')); ?>">Products</a></li>
+         <li><a href="<?php echo e(url('welcome')); ?>">Home</a></li>
+         <li><a href="<?php echo e(url('productspage')); ?>">Products</a></li>
          <li><a href="<?php echo e(url('aboutus')); ?>">Contact Us</a></li>  
          <li><a href="<?php echo e(url('logout')); ?>">Logout</a></li>
-         <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:25px"></i>(<?php echo e($total); ?>)</a></li>
+         <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:25px">(<?php echo e($total); ?>)</i></a></li>
          <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
          <?php else: ?>
-         <li><a href="<?php echo e(url('login')); ?>">Login</a></li>
+         <ul>
+           <li><a href="<?php echo e(url('welcome')); ?>">Home</a></li>
+           <li><a href="<?php echo e(url('productspage')); ?>">Products</a></li>
+           <li><a href="<?php echo e(url('aboutus')); ?>">Contact Us</a></li>  
+           <li><a href="<?php echo e(url('login')); ?>">Login</a></li>
+           <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:25px"></i></a></li>
+           <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
          <?php endif; ?>
         </ul>
-
-
+  
+  
     </nav>
 
     <div class="welcome-page-header">

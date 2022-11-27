@@ -17,24 +17,34 @@
 
 <body>
     
-    <nav>
+   <nav>
 
-        <input type="checkbox" id="box">
-        <label for="box" class="boxbtn">
-            <i class="fa fa-bars"></i>
-        </label>
-        
-        <a href="<?php echo e(url('welcome')); ?>"><img src="images/13keys_-_black.png" width="125" height="85" class="logo" alt=""></a>
-        <ul>
-         <li><a  href="<?php echo e(url('welcome')); ?>">Home</a></li>
-         <li><a href="productspage">Products</a></li>
-         <li><a href="aboutus">Contact Us</a></li>
-         <li><a class="current2"href="<?php echo e(url('registrationpage')); ?>">Login</a></li>         
+      <input type="checkbox" id="box">
+      <label for="box" class="boxbtn">
+          <i class="fa fa-bars"></i>
+      </label>
+      <a href="<?php echo e(url('welcome')); ?>"><img src="images/13keys_-_black.png" width="125" height="85" class="logo" alt=""></a>
+      <?php if(Session::has('user')): ?>
+      <ul>
+       <li><a href="<?php echo e(url('welcome')); ?>">Home</a></li>
+       <li><a href="<?php echo e(url('productspage')); ?>">Products</a></li>
+       <li><a href="<?php echo e(url('aboutus')); ?>">Contact Us</a></li>  
+       <li><a href="<?php echo e(url('logout')); ?>">Logout</a></li>
+       <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:25px"></i></a></li>
+       <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
+       <?php else: ?>
+       <ul>
+         <li><a href="<?php echo e(url('welcome')); ?>">Home</a></li>
+         <li><a href="<?php echo e(url('productspage')); ?>">Products</a></li>
+         <li><a href="<?php echo e(url('aboutus')); ?>">Contact Us</a></li>  
+         <li><a href="<?php echo e(url('login')); ?>">Login</a></li>
          <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:25px"></i></a></li>
          <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
-        </ul>
+       <?php endif; ?>
+      </ul>
 
-    </nav>
+
+  </nav>
 
     <div class = "registration-box">
       <div class = "register">
@@ -63,7 +73,7 @@
           <br>
           <br>
           <div class="registration-text">Confirm Password:</div>
-          <input type ="password" id ="name" name ="cpswrd" class="name-input name-shadow" minlength="8" placeholder ="Re-enter Password">
+          <input type ="password" id ="confirmPassword" name ="confirmPassword" class="name-input name-shadow" minlength="8" placeholder ="Re-enter Password">
           <br>
           <br>
           <div class="registration-text">Address:</div>
@@ -112,5 +122,22 @@
 
     }
     
+
+    //Creating the Confirm Password script to make sure that the passwords entered are the same.
+
+    var mainPassword = document.getElementById("Password")
+    , confirmPassword = document.getElementById("confirmPassword");
+
+    function validatePassword(){
+    if(mainPassword.value != confirmPassword.value) {
+      confirmPassword.setCustomValidity("Passwords Don't Match");
+    } else {
+    confirmPassword.setCustomValidity('');
+    }
+}
+
+mainPassword.onchange = validatePassword;
+confirmPassword.onkeyup = validatePassword;
+
 </script>
 </html><?php /**PATH C:\Users\ndham\OneDrive\Documents\GitHub\Team-13\resources\views/registrationpage.blade.php ENDPATH**/ ?>

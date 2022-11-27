@@ -53,7 +53,7 @@ Route::post('/registrationpage', function(){
     $user->EmailAddress = request('EmailAddress');
     $user->Password = bcrypt(request('Password'));
     $user->save();
-    return redirect('/welcome');
+    return redirect('/login');
 });
 
 Route::post("/login",[UserController::class,'login']);
