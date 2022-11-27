@@ -441,8 +441,19 @@ a.current1, a.current2, a:hover{
     background-color: var(--s-colour);
 }
 
+.desc{
+    align-items: center;
+}
 
+.cart-container{
+    width: 100;
+    display: flex;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
 
+}
 
 
 

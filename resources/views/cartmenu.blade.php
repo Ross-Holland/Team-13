@@ -50,58 +50,58 @@ $total = ProductController::cartItem();
   
   
     </nav>
+
 </body>
 
-<p1>
-    <div class="about-us">
-        About us
+
+
+      
+            <div class="cart-header">
+                <h2>ALL CART PRODUCTS</h2>
+                <a href="order" class="">Place Order</a>
+            </div>
+         @foreach ($products as $item)
+             <div class="cart-container">
+                
+                <div class="cart-image">
+                    <a href="productspage/{{ $item->id }}" class="">
+                <img src="{{ $item->Image }}" alt="" class="trending-image">
+                <div class="">
+
+                </div>
+                </a>
+                </div>
+
+                
+                <div class="cart-info">
+                <div class="">
+                 <h2>{{ $item->Name }}</h2>
+                 <h3>{{ $item->Description }}</h3>
+                 <h3>{{ $item->Price }}</h3>
+
+                </div>
+                </a>
+                </div>
+
+                <div class="cart-remove">
+                    <a href="/remove/{{ $item->cart_id }}">Remove from Cart</a>
         
-        <br>
-        <br>
-        We are 13Keys the market leading e-commerce store for buying instruments.
-        As a team we thrive to give our customers the best service we can by not only selling the highest quality equipment possible
-        but also give our customers the best experience while purchasing their new equipment.
-        <br>
-        <br>
-        <br>
-        Why shop at 13Keys
-        <br>
-        <br>
-        We only sell the highest quality equipment so it'll last a lifetime.
-        <br>
-        We promise excellent customer service from beginning to end and even after.
-        <br>
-        All our purchases come with free premium shipping.
-        <br>
-        In case of accidents all purchases come with free 3 year warrenty for fixes or replacements.   
-        <br>
-        Our excelent stock means You'll find exactly what u need.
-        <br>
-        If you decide it isn't what you want you can return it within 30 days.
-        <br>
-        <br>
-        <br>
-        News letter
-        <br>
-        <br>
-        Want to keep up to date with all our latest news and discounts?
-        <br>
-        Join our news letter here!
-        <br>
-        <a id="nothing" href="#">Click here</a>
-</p1>
+                <div class="">
+                 
+                </div>
+                </a>
+                </div>
+             </div>
+         @endforeach
 
-<footer>
-    <div class="about-us-footer">
-        Where to contact us
-        <br>
-        Twitter: <a id="nothing" href="#">13Keys</a> LinkedIn: <a id="nothing" href="#">13Keys</a> Email: <a id="nothing" href="#">13Keys</a>
-</footer>
+        
 
+        
+       
+         <a href="order" class="">Place Order</a>
     <script>
         var moonicon = document.getElementById("moonicon");
-    
-       /* 
+    /* 
     Explaniation of the JavaScript is explained in the welcome.blade.
     */
     
@@ -128,9 +128,7 @@ $total = ProductController::cartItem();
             }
     
         }
-    
-        
-    
+
     </script>
     
     </html>
