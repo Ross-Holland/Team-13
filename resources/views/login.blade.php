@@ -32,8 +32,8 @@
             <p class="login-welcome-text">Welcome! Please sign in below.</p>
             </div>
             @csrf
-            <input class="login-email" type="email" name="email" placeholder="Email" required/>
-            <input class="login-password" type="password" name="password" placeholder="Password" required/>
+            <input class="login-email" type="email" name="email" placeholder="Email"/>
+            <input class="login-password" type="password" name="password" placeholder="Password"/>
             <button class="login-button">Login</button>
             <hr class="login-line-break">
             <div class="login-register-wrap">
