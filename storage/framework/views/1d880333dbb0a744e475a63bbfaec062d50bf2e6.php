@@ -1,8 +1,12 @@
 <?php
 use App\Http\Controllers\ProductController;
+use Illuminate\Support\Facades\Session;
+$total=0;
+if(Session::has('user')){
 $total = ProductController::cartItem();
+$listAmount = ProductController::wishListItem();
+}
 ?>
-
 <!DOCTYPE html>
 <html lang="<?php echo e(str_replace('_', '-', app()->getLocale())); ?>">
 
@@ -36,16 +40,11 @@ $total = ProductController::cartItem();
          <li><a href="<?php echo e(url('productspage')); ?>">Products</a></li>
          <li><a href="<?php echo e(url('aboutus')); ?>">Contact Us</a></li>  
          <li><a href="<?php echo e(url('logout')); ?>">Logout</a></li>
+         <li><a href="wishlist"><i class="fa fa-star-o" style="font-size:25px">(<?php echo e($listAmount); ?>)</i></a></li>
          <li><a href="cartmenu"><i class="fa fa-shopping-cart" style="font-size:25px">(<?php echo e($total); ?>)</i></a></li>
          <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
          <?php else: ?>
-         <ul>
-           <li><a href="<?php echo e(url('welcome')); ?>">Home</a></li>
-           <li><a href="<?php echo e(url('productspage')); ?>">Products</a></li>
-           <li><a href="<?php echo e(url('aboutus')); ?>">Contact Us</a></li>  
-           <li><a href="<?php echo e(url('login')); ?>">Login</a></li>
-           <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:25px"></i></a></li>
-           <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
+         
          <?php endif; ?>
         </ul>
   
@@ -65,11 +64,7 @@ $total = ProductController::cartItem();
             We are proud to promote our market leading, high quality products to you.
             <br>
             <br>
-            To protect our high quality, professional products from our competitors we ask that
-            you login or create an account to gain full access to our website and products.
-            <br>
-            <br>
-            To login click the Login button in the navigation bar above.
+            Please feel free to browse our products and get in contact with if you have any queries.
             <?php else: ?>
             <div class="welcome-text">
                 Welcome to 13Keys!
@@ -86,14 +81,6 @@ $total = ProductController::cartItem();
                 To login click the Login button in the navigation bar above.
             <?php endif; ?>
     </p1>
-    <p2>
-        <br>
-        <br>
-        Don't have an account with us?
-        <br>
-        <br>
-        <a href="<?php echo e(url('/registrationpage')); ?>"> <button type="button" class="submit-button"> Register Here! </button></a>
-    </p2>
     <br>
     <br>
     Trending Now!

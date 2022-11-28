@@ -1,8 +1,12 @@
 <?php
 use App\Http\Controllers\ProductController;
+use Illuminate\Support\Facades\Session;
+$total=0;
+if(Session::has('user')){
 $total = ProductController::cartItem();
+$listAmount = ProductController::wishListItem();
+}
 ?>
-
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -36,16 +40,11 @@ $total = ProductController::cartItem();
          <li><a href="{{ url('productspage')}}">Products</a></li>
          <li><a href="{{ url('aboutus') }}">Contact Us</a></li>  
          <li><a href="{{ url('logout')}}">Logout</a></li>
+         <li><a href="wishlist"><i class="fa fa-star-o" style="font-size:25px">({{ $listAmount }})</i></a></li>
          <li><a href="cartmenu"><i class="fa fa-shopping-cart" style="font-size:25px">({{ $total }})</i></a></li>
          <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
          @else
-         <ul>
-           <li><a href="{{ url('welcome')}}">Home</a></li>
-           <li><a href="{{ url('productspage')}}">Products</a></li>
-           <li><a href="{{ url('aboutus') }}">Contact Us</a></li>  
-           <li><a href="{{ url('login')}}">Login</a></li>
-           <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:25px"></i></a></li>
-           <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
+         
          @endif
         </ul>
   

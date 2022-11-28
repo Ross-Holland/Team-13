@@ -1,6 +1,11 @@
 <?php
 use App\Http\Controllers\ProductController;
+use Illuminate\Support\Facades\Session;
+$total=0;
+if(Session::has('user')){
 $total = ProductController::cartItem();
+$listAmount = ProductController::wishListItem();
+}
 ?>
 
 <!DOCTYPE html>
@@ -31,21 +36,16 @@ $total = ProductController::cartItem();
         <a href="{{ url('welcome')}}"><img src="images/13keys_-_black.png" width="125" height="85" class="logo" alt=""></a>
         @if(Session::has('user'))
         <ul>
-         <li><a href="{{ url('myorders') }}">My Orders</a></li>  
-         <li><a href="{{ url('welcome')}}">Home</a></li>
-         <li><a href="{{ url('productspage')}}">Products</a></li>
-         <li><a href="{{ url('aboutus') }}">Contact Us</a></li>  
-         <li><a href="{{ url('logout')}}">Logout</a></li>
-         <li><a href="cartmenu"><i class="fa fa-shopping-cart" style="font-size:25px">({{ $total }})</i></a></li>
-         <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
+          <li><a href="{{ url('myorders') }}">My Orders</a></li>     
+          <li><a href="{{ url('welcome')}}">Home</a></li>
+          <li><a href="{{ url('productspage')}}">Products</a></li>
+          <li><a href="{{ url('aboutus') }}">Contact Us</a></li>  
+          <li><a href="{{ url('logout')}}">Logout</a></li>
+          <li><a href="wishlist"><i class="fa fa-star-o" style="font-size:25px">({{ $listAmount }})</i></a></li>
+          <li><a href="cartmenu"><i class="fa fa-shopping-cart" style="font-size:25px">({{ $total }})</i></a></li>
+          <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
          @else
-         <ul>
-           <li><a href="{{ url('welcome')}}">Home</a></li>
-           <li><a href="{{ url('productspage')}}">Products</a></li>
-           <li><a href="{{ url('aboutus') }}">Contact Us</a></li>  
-           <li><a href="{{ url('login')}}">Login</a></li>
-           <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:25px"></i></a></li>
-           <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
+        
          @endif
         </ul>
   

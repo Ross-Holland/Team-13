@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Session;
 $total=0;
 if(Session::has('user')){
 $total = ProductController::cartItem();
+$listAmount = ProductController::wishListItem();
 }
 ?>
 
@@ -33,23 +34,22 @@ $total = ProductController::cartItem();
         <label for="box" class="boxbtn">
             <i class="fa fa-bars"></i>
         </label>
-        <a href="{{ url('welcome')}}"><img src="images/13keys_-_black.png" width="125" height="85" class="logo" alt=""></a>
         @if(Session::has('user'))
+        <a href="{{ url('welcome')}}"><img src="images/13keys_-_black.png" width="125" height="85" class="logo" alt=""></a>
         <ul>
-         <li><a href="{{ url('myorders') }}">My Orders</a></li>  
-         <li><a href="{{ url('welcome')}}">Home</a></li>
-         <li><a href="{{ url('productspage')}}">Products</a></li>
-         <li><a href="{{ url('aboutus') }}">Contact Us</a></li>  
-         <li><a href="{{ url('logout')}}">Logout</a></li>
-         <li><a href="cartmenu"><i class="fa fa-shopping-cart" style="font-size:25px">({{ $total }})</i></a></li>
-         <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
+            <li><a href="{{ url('myorders') }}">My Orders</a></li>     
+            <li><a href="{{ url('welcome')}}">Home</a></li>
+            <li><a href="{{ url('productspage')}}">Products</a></li>
+            <li><a href="{{ url('aboutus') }}">Contact Us</a></li>  
+            <li><a href="{{ url('logout')}}">Logout</a></li>
+            <li><a href="wishlist"><i class="fa fa-star-o" style="font-size:25px">({{ $listAmount }})</i></a></li>
+            <li><a href="cartmenu"><i class="fa fa-shopping-cart" style="font-size:25px">({{ $total }})</i></a></li>
+            <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
          @else
+         <img src="images/13keys_-_black.png" width="125" height="85" class="logo" alt="">
          <ul>
-           <li><a href="{{ url('welcome')}}">Home</a></li>
            <li><a href="{{ url('productspage')}}">Products</a></li>
-           <li><a href="{{ url('aboutus') }}">Contact Us</a></li>  
            <li><a href="{{ url('login')}}">Login</a></li>
-           <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:25px"></i></a></li>
            <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
          @endif
         </ul>
@@ -102,9 +102,10 @@ $total = ProductController::cartItem();
             $db_host = 'localhost';
             $db_name = 'e-commercedb';
             $username = 'root';
+            $password = '123';
 
             try {
-                $db = new PDO("mysql:dbname=$db_name;host=$db_host", $username); 
+                $db = new PDO("mysql:dbname=$db_name;host=$db_host", $username, $password); 
                 #$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 try {
                     $query="SELECT  * FROM  `products` WHERE `Instrument Type` = '$dept'";
@@ -125,6 +126,11 @@ $total = ProductController::cartItem();
                                 <input type="hidden" name="product_id" value="{{ $row['id'] }}">
                                 <button class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Add to Cart</button>
                             </form>
+                            <form action="/add_to_wish" method="POST">
+                                @csrf
+                                <input type="hidden" name="product_id" value="{{ $row['id'] }}">
+                               <button class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Add to Wishlist</button>
+                               </form>
                             </div>
                             <?php
                         }

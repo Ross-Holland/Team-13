@@ -18,7 +18,8 @@ use Illuminate\Support\Facades\Session;
 */
 
 Route::get('/', function () {
-    return view('login');
+    Session::forget('user');
+    return redirect('login');
 });
 
 Route::get('/welcome', function () {
@@ -65,10 +66,13 @@ Route::post('/registrationpage', function(){
 
 Route::post("/login",[UserController::class,'login']);
 Route::post('add_to_cart', [ProductController::class, 'addToCart']);
+Route::post('add_to_wish', [ProductController::class, 'addToWish']);
 Route::post("orderplaced", [ProductController::class, 'paymentDone']);
 
 
 Route::get('cartmenu', [ProductController::class, 'cartMenu']);
+Route::get('wishlist', [ProductController::class, 'wishListMenu']);
 Route::get('remove/{id}', [ProductController::class, 'cartRemove']);
+Route::get('removeList/{id}', [ProductController::class, 'wishRemove']);
 Route::get("order", [ProductController::class, 'orderPlaced']);
 Route::get("myorders", [ProductController::class, 'orderList']);

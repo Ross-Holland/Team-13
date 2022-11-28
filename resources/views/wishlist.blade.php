@@ -58,15 +58,16 @@ $listAmount = ProductController::wishListItem();
 
       
             <div class="cart-header">
-                <h2>List of My Orders</h2>
-
+                <h2>HERE IS YOUR WISHLIST</h2>
             </div>
-         @foreach ($list as $item)
+            
+                
+         @foreach ($wishItems as $item)
              <div class="cart-container">
                 
                 <div class="cart-image">
                     <a href="productspage/{{ $item->id }}" class="">
-                <img src="{{ $item->Image }}" alt="" class="trending-image">
+                <img src="{{ $item->Image }}" alt="" class="trending-image" width= 250px height= 350px>
                 <div class="">
 
                 </div>
@@ -76,21 +77,27 @@ $listAmount = ProductController::wishListItem();
                 
                 <div class="cart-info">
                 <div class="">
-                 <h2>Name: {{ $item->Name }}</h2>
-                 <h3>Delivery Status: {{ $item->status}}</h3>
-                 <h3>Billing Address: {{  $item->address }}</h3>
-                 <h3>Payment Method: {{ $item->payment_method }}</h3>
-                 <h3>Payment Status: {{ $item->payment_status }}</h3>
+                 <div class = "name"><h2>{{ $item->Name }}</h2></div>
+                 <div class = "desc"><h3>{{ $item->Description }}</h3></div>
+                 <div class = "price"><h3>£{{ $item->Price }}</h3></div>
+
                 </div>
                 </a>
                 </div>
 
+                <div class="cart-remove">
+                    <a href="/removeList/{{ $item->wishlist_id }}"><i class="fa fa-trash" aria-hidden="true"></i></a>
+        
+                <div class="">
+                 
+                </div>
+                </a>
+                </div>
              </div>
          @endforeach
 
-        
+       
 
-        
     <script>
         var moonicon = document.getElementById("moonicon");
     /* 

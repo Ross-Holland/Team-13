@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Cart;
+use App\Models\Wish;
 use App\Models\Order;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
@@ -107,5 +108,46 @@ class ProductController extends Controller
 
     }
 
+    //Wishlist functions
+
+    function addToWish(Request $req)
+     {
+        if($req->session()->has('user'))
+        {
+
+        $cart = new Wish;
+        $cart->user_id=$req->session()->get('user')['id'];
+        $cart->product_id=$req->product_id;
+        $cart->save();
+        return redirect('/welcome');
+        
+        }
+     else{
+          return redirect('/login');
+         }
+
 }
 
+   static function wishListItem()
+    {
+   $userId = Session::get('user')['id'];
+   return Wish::where('user_id', $userId)->count();
+   }
+
+   function wishListMenu()
+   {
+    $idUser = Session::get('user')['id'];
+    $items= DB::table('wishlist')->join('products', 'wishlist.product_id', 'products.id')
+    ->where('wishlist.user_id', $idUser)
+    ->select('products.*', 'wishlist.id as wishlist_id')
+    ->get();
+    return view('wishlist', ['wishItems'=>$items]);
+   }
+
+   function wishRemove($id)
+   {
+     Wish::destroy($id);
+     return redirect('wishlist');
+   }
+
+}
