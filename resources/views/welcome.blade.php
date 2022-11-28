@@ -99,7 +99,7 @@ $total = ProductController::cartItem();
     Trending Now!
     <div class="carousel-container">
         <div class="carousel-images">
-            <img class="carousel-img" src="elec_guitar.png">
+            <img class="carousel-img" src="login_elec_guitar.png">
         </div>
 
         <div class="carousel-images">
