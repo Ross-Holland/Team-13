@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Styles -->
   <link href="{{ url('css/loginpage.css') }}" rel="stylesheet">
-  <link href="/css/main.css" rel="stylesheet">
+  <link href="{{ url('/css/main.css') }}" rel="stylesheet">
   <title>Login Page</title> 
 </head>
 <!DOCTYPE html>
