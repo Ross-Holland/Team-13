@@ -106,17 +106,17 @@ $total = ProductController::cartItem();
                         while  ($row =  $rows->fetch())	{
                             ?>
                             <div class = "product-item">
-                            <form action="/add_to_cart" method="POST">
-                                @csrf
-                                <input type="hidden" name="product_id" value="{{ $row['id'] }}">
-                                <button class="btn btn-primary">Add to Cart</button>
-                            </form>
                             <?php
-                            echo '<tr><td><a href="productid="' . $row['id'] . '><img src ="' . $row['Image'] . '" width= 250px height= 350px></a></td>';
+                            echo '<tr><td><a href="/productselect?productid=' . $row['id'] . '"><img src ="' . $row['Image'] . '" width= 250px height= 350px></a></td>';
                             echo '<td><span class="product-name">' . $row['Name'] . '</span></td>';
                             echo '<td><div class="price">£' . $row['Price'] . '</div></td>';
                             echo '<td><span class="instrument-type">' . $row['Instrument Type'] . '</span></td></tr>';
                             ?>
+                            <form action="/add_to_cart" method="POST">
+                                @csrf
+                                <input type="hidden" name="product_id" value="{{ $row['id'] }}">
+                                <button class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Add to Cart</button>
+                            </form>
                             </div>
                             <?php
                         }

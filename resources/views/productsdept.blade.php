@@ -1,3 +1,13 @@
+<?php
+use App\Http\Controllers\ProductController;
+use Illuminate\Support\Facades\Session;
+$total=0;
+if(Session::has('user')){
+$total = ProductController::cartItem();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -11,7 +21,6 @@
     <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <!-- Styles -->
     <link href="/css/main.css" rel="stylesheet">
-    <script defer src="/js/productsJS.js" ></script>
     
 
 </head>
@@ -24,16 +33,28 @@
         <label for="box" class="boxbtn">
             <i class="fa fa-bars"></i>
         </label>
-        
-          <label class="logo" href="{{ url('welcome')}}"><img src="13keys-black.png" alt="Logo" width= 200px height= 150px></label>
+        <a href="{{ url('welcome')}}"><img src="images/13keys_-_black.png" width="125" height="85" class="logo" alt=""></a>
+        @if(Session::has('user'))
         <ul>
-         <li><a  href="{{ url('welcome')}}">Home</a></li>
-         <li><a class="current3"href="{{ url('productspage')}}">Products</a></li>
-         <li><a href="/">Contact Us</a></li>
-         <li><a href="{{ url('login')}}">Login</a></li>         
-         <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:25px"></i></a></li>
+         <li><a href="{{ url('myorders') }}">My Orders</a></li>  
+         <li><a href="{{ url('welcome')}}">Home</a></li>
+         <li><a href="{{ url('productspage')}}">Products</a></li>
+         <li><a href="{{ url('aboutus') }}">Contact Us</a></li>  
+         <li><a href="{{ url('logout')}}">Logout</a></li>
+         <li><a href="cartmenu"><i class="fa fa-shopping-cart" style="font-size:25px">({{ $total }})</i></a></li>
          <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
+         @else
+         <ul>
+           <li><a href="{{ url('welcome')}}">Home</a></li>
+           <li><a href="{{ url('productspage')}}">Products</a></li>
+           <li><a href="{{ url('aboutus') }}">Contact Us</a></li>  
+           <li><a href="{{ url('login')}}">Login</a></li>
+           <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:25px"></i></a></li>
+           <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
+         @endif
         </ul>
+  
+  
     </nav>
     <?php
         $dept = $_GET['dept'];
@@ -94,11 +115,16 @@
                             ?>
                             <div class = "product-item">
                             <?php
-                            echo '<tr><td><a href="productid="' . $row['id'] . '><img src ="' . $row['Image'] . '" width= 250px height= 350px></a></td>';
+                            echo '<tr><td><a href="/productselect?productid=' . $row['id'] . '"><img src ="' . $row['Image'] . '" width= 250px height= 350px></a></td>';
                             echo '<td><span class="product-name">' . $row['Name'] . '</span></td>';
                             echo '<td><div class="price">£' . $row['Price'] . '</div></td>';
                             echo '<td><span class="instrument-type">' . $row['Instrument Type'] . '</span></td></tr>';
                             ?>
+                            <form action="/add_to_cart" method="POST">
+                                @csrf
+                                <input type="hidden" name="product_id" value="{{ $row['id'] }}">
+                                <button class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Add to Cart</button>
+                            </form>
                             </div>
                             <?php
                         }
