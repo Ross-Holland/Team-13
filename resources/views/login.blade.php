@@ -28,7 +28,7 @@
           
           <form action="login" method="POST" class="login">
             <div class="title-wrap">
-            <h2 class="login-title">13Keys <br>Login page</h2>
+            <h2 class="login-title">13Keys Login</h2>
             <p class="login-welcome-text">Welcome! Please sign in below.</p>
             </div>
             @csrf
@@ -38,7 +38,7 @@
             <hr class="login-line-break">
             <div class="login-register-wrap">
             <p class="login-register">Don't have an account?</p>
-            <a href="{{ url('registrationpage')}}" class="login-register-button"><p>Register here!</p></a>
+            <a href="{{ url('registrationpage')}}" class="login-register-button"><p>Register</p></a>
             </div>
           </form>
         </div>
