@@ -112,6 +112,8 @@
 }
 .login-register-button{
     cursor: pointer;
+    text-align: center;
+    text-decoration: none;
     color: white;
     width: 70%;
     height: 100%;
