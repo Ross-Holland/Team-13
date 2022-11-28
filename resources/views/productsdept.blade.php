@@ -105,7 +105,7 @@ $listAmount = ProductController::wishListItem();
             $password = '123';
 
             try {
-                $db = new PDO("mysql:dbname=$db_name;host=$db_host", $username, $password); 
+                $db = new PDO("mysql:dbname=$db_name;host=$db_host", $username); 
                 #$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 try {
                     $query="SELECT  * FROM  `products` WHERE `Instrument Type` = '$dept'";
