@@ -16052,6 +16052,7 @@ Did you mean one of these?
 #59 C:\\Users\\UniSp\\Team-13\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(16): require_once('C:\\\\Users\\\\UniSp\\\\...')
 #60 {main}
 "} 
+<<<<<<< HEAD
 [2022-11-28 17:49:48] local.ERROR: Trying to access array offset on value of type null {"exception":"[object] (ErrorException(code: 0): Trying to access array offset on value of type null at C:\\Users\\UniSp\\Team-13\\app\\Http\\Controllers\\ProductController.php:46)
 [stacktrace]
 #0 C:\\Users\\UniSp\\Team-13\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(259): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'Trying to acces...', 'C:\\\\Users\\\\UniSp\\\\...', 46)
@@ -16108,3 +16109,5 @@ Did you mean one of these?
 #51 C:\\Users\\UniSp\\Team-13\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(16): require_once('C:\\\\Users\\\\UniSp\\\\...')
 #52 {main}
 "} 
+=======
+>>>>>>> c5a8e2ce81179cf2f5803dd7d9790a07755039f1
