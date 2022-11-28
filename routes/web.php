@@ -46,6 +46,10 @@ Route::get('/aboutus', function () {
     return view('aboutus');
 });
 
+Route::get('/productsdept', function () {
+    return view('productsdept');
+});
+
 Route::post('/registrationpage', function(){
     $user = new User();
     $user->Firstname = request('Fname');
