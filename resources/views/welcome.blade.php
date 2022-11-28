@@ -65,11 +65,7 @@ $total = ProductController::cartItem();
             We are proud to promote our market leading, high quality products to you.
             <br>
             <br>
-            To protect our high quality, professional products from our competitors we ask that
-            you login or create an account to gain full access to our website and products.
-            <br>
-            <br>
-            To login click the Login button in the navigation bar above.
+            Please feel free to browse our products and get in contact with if you have any queries.
             @else
             <div class="welcome-text">
                 Welcome to 13Keys!
@@ -86,14 +82,6 @@ $total = ProductController::cartItem();
                 To login click the Login button in the navigation bar above.
             @endif
     </p1>
-    <p2>
-        <br>
-        <br>
-        Don't have an account with us?
-        <br>
-        <br>
-        <a href="{{url('/registrationpage')}}"> <button type="button" class="submit-button"> Register Here! </button></a>
-    </p2>
     <br>
     <br>
     Trending Now!
