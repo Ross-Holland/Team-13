@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Styles -->
   <link href="{{ url('css/loginpage.css') }}" rel="stylesheet">
+  <link href="/css/main.css" rel="stylesheet">
   <title>Login Page</title> 
 </head>
 <!DOCTYPE html>
@@ -21,6 +22,35 @@
   <link rel="stylesheet" href="loginpage.css">
 </head>
 <body class="login-body">
+  <nav>
+
+    <input type="checkbox" id="box">
+    <label for="box" class="boxbtn">
+        <i class="fa fa-bars"></i>
+    </label>
+    <a href="{{ url('welcome')}}"><img src="images/13keys_-_black.png" width="125" height="85" class="logo" alt=""></a>
+    @if(Session::has('user'))
+    <ul>
+     <li><a href="{{ url('myorders') }}">My Orders</a></li>  
+     <li><a href="{{ url('welcome')}}">Home</a></li>
+     <li><a href="{{ url('productspage')}}">Products</a></li>
+     <li><a href="{{ url('aboutus') }}">Contact Us</a></li>  
+     <li><a href="{{ url('logout')}}">Logout</a></li>
+     <li><a href="cartmenu"><i class="fa fa-shopping-cart" style="font-size:25px">({{ $total }})</i></a></li>
+     <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
+     @else
+     <ul>
+       <li><a href="{{ url('welcome')}}">Home</a></li>
+       <li><a href="{{ url('productspage')}}">Products</a></li>
+       <li><a href="{{ url('aboutus') }}">Contact Us</a></li>  
+       <li><a href="{{ url('login')}}">Login</a></li>
+       <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:25px"></i></a></li>
+       <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
+     @endif
+    </ul>
+
+
+</nav>
   <main class="login-main">
     <div class="login-box">
       <div class="login-inner-box">
@@ -46,31 +76,43 @@
           <img src="login_elec_guitar.png" class="login_img" alt="">
 
         </div>
-        <!--<div class="login-carousel">
-          <div class="login-img-wrap">
-            <img src="login_elec_guitar.png" class="login_img login_elec login_show" alt="">
-            <img src="login_drummer.png" class="login_img login_drummer" alt="">
-            <img src="login_acoustic_guitarist.png" class="login_img login_acoustic" alt="">
-          </div>
-          <div class="login-img-slider">
-            <div class="login-text-wrap">
-              <div class="login-text-group">
-                <h2>some stuff</h2>
-                <h2>more stuff</h2>
-                <h2>even more</h2>
-              </div>
-            </div>
-            <div class="login-bullet">
-              <span class="login-active-bullet" data-value="1"></span>
-              <span data-value="2"></span>
-              <span data-value="3"></span>
-            </div>
-          </div>
-        </div> -->
       </div>
     </div>
   </main>
   <!-- JavaScript File-->
   <script src="login.js"></script>
 </body>
+<script src="login.js"></script>
+<script>
+  var moonicon = document.getElementById("moonicon");
+
+  /* 
+  Explaniation of the JavaScript is explained in the welcome.blade.
+  */
+
+  if(localStorage.getItem("theme") == null){
+     localStorage.setItem("theme", "light-theme");
+  }
+
+  let localData = localStorage.getItem("theme");
+
+  if(localData == "light-theme"){
+     document.body.classList.remove("dark");
+
+  } else if (localData == "dark-theme"){
+     document.body.classList.add("dark");
+  }
+     
+  moonicon.onclick = function(){
+     document.body.classList.toggle("dark");
+
+  if(document.body.classList.contains("dark")){
+     localStorage.setItem("theme", "dark-theme");
+  } else {
+     localStorage.setItem("theme", "light-theme");
+  }
+
+  }
+  
+</script>
 </html>
