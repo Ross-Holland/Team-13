@@ -448,16 +448,165 @@ a.current1, a.current2, a:hover{
     align-items: center;
 }
 
-.cart-container{
-    width: 100;
-    display: flex;
+
+/* CART MENU */
+
+.cart-header h2{
+    text-align:center;
+    padding: 40px;
     text-align: center;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
+    font-size: 30px;
+    border-bottom: 3px solid rgb(71, 71, 71);
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cart-container{
+    max-width: 2000px;
+    margin: 3rem 0;
+    padding: 0 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 
 }
 
+.orderLink{
+    text-align:center;
+    padding: 40px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 20px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  
+}
+
+.orderlink a{
+    color: var(--s-colour);
+}
+.orderlink a:hover{
+    background: none;
+    color: var(--h-colour);
+    transition: .5s;
+}
+
+.cart-info{
+    max-width:1000px;
+}
+.name{
+    padding-top:50px;
+    padding-bottom:50px;
+}
+
+.price{
+    padding-top:50px;
+    padding-bottom:50px;
+}
+.cart-remove {
+    padding-top:50px;
+    padding-left:50px;
+}
+
+.cart-remove a {
+    color: var(--s-colour);
+    font-weight: 700;
+    font-size: 50px;
+}
+
+.cart-remove a:hover {
+    background: none;
+    color: var(--h-colour);
+    transition: .5s;
+}
+
+.cart-image{
+    padding-right:50px;
+}
 
 
+/* CHECKOUT PAGE */
 
+.order-header h2{
+    text-align:center;
+    padding: 40px;
+    font-size: 30px;
+    border-bottom: 3px solid rgb(71, 71, 71);
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.order-container{
+    max-width: 2000px;
+    margin: 3rem 0;
+    padding: 0 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.order-container td{
+    padding: 20px;
+    font-size: 20px;
+    border-bottom: 1px solid rgb(71, 71, 71);
+    width:250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.billing-container{
+    max-width: 2000px;
+    margin: 3rem 0;
+    padding: 0 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.billing-container label{
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px;
+    font-size: 30px;
+    border-bottom: 3px solid rgb(71, 71, 71);
+}
+
+.billing-container h3{
+    padding: 20px;
+    font-size: 20px;
+    border-bottom: 1px solid rgb(71, 71, 71);
+    width:500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.billing-container textarea{
+    margin-top: 50px;
+    font-size: 20px;
+    border-bottom: 1px solid rgb(71, 71, 71);
+    width:500px;
+    height:100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.billing-container .order-button{
+    margin-top: 50px;
+    font-size: 50px;
+    width:500px;
+    height:100px;
+    border-radius: 5px;
+    border-width:medium;
+    color: var(--s-colour);
+    background-color: #595959;
+}
+
+.billing-container .order-button:hover{
+    color: var(--h-colour);
+}

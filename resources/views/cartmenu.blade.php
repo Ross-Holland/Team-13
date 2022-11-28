@@ -58,15 +58,18 @@ $total = ProductController::cartItem();
 
       
             <div class="cart-header">
-                <h2>ALL CART PRODUCTS</h2>
-                <a href="order" class="">Place Order</a>
+                <h2>YOUR BASKET ITEMS</h2>
             </div>
+            <div class = "orderLink">
+                <a href="order" >PROCEED TO CHECKOUT</a>
+            </div>
+                
          @foreach ($products as $item)
              <div class="cart-container">
                 
                 <div class="cart-image">
                     <a href="productspage/{{ $item->id }}" class="">
-                <img src="{{ $item->Image }}" alt="" class="trending-image">
+                <img src="{{ $item->Image }}" alt="" class="trending-image" width= 250px height= 350px>
                 <div class="">
 
                 </div>
@@ -76,16 +79,16 @@ $total = ProductController::cartItem();
                 
                 <div class="cart-info">
                 <div class="">
-                 <h2>{{ $item->Name }}</h2>
-                 <h3>{{ $item->Description }}</h3>
-                 <h3>{{ $item->Price }}</h3>
+                 <div class = "name"><h2>{{ $item->Name }}</h2></div>
+                 <div class = "desc"><h3>{{ $item->Description }}</h3></div>
+                 <div class = "price"><h3>£{{ $item->Price }}</h3></div>
 
                 </div>
                 </a>
                 </div>
 
                 <div class="cart-remove">
-                    <a href="/remove/{{ $item->cart_id }}">Remove from Cart</a>
+                    <a href="/remove/{{ $item->cart_id }}"><i class="fa fa-trash" aria-hidden="true"></i></a>
         
                 <div class="">
                  
@@ -95,11 +98,11 @@ $total = ProductController::cartItem();
              </div>
          @endforeach
 
-        
-
-        
        
-         <a href="order" class="">Place Order</a>
+         <div class = "orderLink">
+                <a href="order" >PROCEED TO CHECKOUT</a>
+        </div>
+
     <script>
         var moonicon = document.getElementById("moonicon");
     /* 

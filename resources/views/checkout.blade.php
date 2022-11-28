@@ -54,44 +54,48 @@ $total = ProductController::cartItem();
 
 </body>
 
-      
-<table class="table">
-    
-    <tbody>
-      <tr>
-        <td>Amount</td>
-        <td>£ {{ $amount }}</td>
-      </tr>
-      <tr>
-        <td>Tax</td>
-        <td>£ 0</td>
-      </tr>
-      <tr>
-        <td>Delivery</td>
-        <td>£ 5</td>
-      </tr>
-      <tr>
-        <td>Total Amount</td>
-        <td>£ {{ $amount + 5 }}</td>
-      </tr>
-    </tbody>
-  </table>
-
-      
-
-   <form action="/orderplaced" method="POST">
-    @csrf
-    <div class="payment-methods">
-    <label for="pm">Billing Information</label> <br> <br>
-    <h3>User Name: {{ Session::get('user')['Firstname'] }}</h3>
-    <h3>Email Address: {{ Session::get('user')['EmailAddress'] }}</h3>
-    <textarea name="address" placeholder="Please enter your billing address" class="address-box"></textarea> <br> <br>
-    <label for="pm">Payment Method</label> <br> <br>
-    <input type="radio" value="cash" name="payment"> <span>Online Payment</span> <br> <br>
-    <input type="radio" value="cash" name="payment"> <span>EMI Payment</span> <br> <br>
+  <div class="order-header">
+    <h2>CHECKOUT</h2>
+  </div>
+<div class = "order-container">
+    <table class="table">
+        
+        <tbody>
+          <tr>
+            <td>Price:</td>
+            <td>£ {{ $amount }}</td>
+          </tr>
+          <tr>
+            <td>Tax:</td>
+            <td>£ 0</td>
+          </tr>
+          <tr>
+            <td>Delivery:</td>
+            <td>£ 5</td>
+          </tr>
+          <tr>
+            <td>Total:</td>
+            <td>£ {{ $amount + 5 }}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+          
+<div class = "billing-container">
+      <form action="/orderplaced" method="POST">
+        @csrf
+        <div class="payment-methods">
+        <label for="pm">Billing Information</label> <br> <br>
+        <h3>Name: {{ Session::get('user')['Firstname'] }}</h3>
+        <h3>Email Address: {{ Session::get('user')['EmailAddress'] }}</h3>
+        <textarea name="address" placeholder="Please enter your billing address" class="address-box"></textarea> <br> <br>
+        <label for="pm">Payment Method</label> <br> <br>
+        <input type="radio" value="cash" name="payment"> <span>Online Payment</span> <br> <br>
+        <input type="radio" value="cash" name="payment"> <span>EMI Payment</span> <br> <br>
+        </div>
+      <button type="submit" class="order-button">Order Now</button>
+    </form>
     </div>
-  <button type="submit" class="">Order Now</button>
-</form>
 </div>
 
         
