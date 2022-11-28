@@ -58,10 +58,10 @@ $total = ProductController::cartItem();
 
       
             <div class="cart-header">
-                <h2>ALL CART PRODUCTS</h2>
-                <a href="order" class="">Place Order</a>
+                <h2>List of My Orders</h2>
+
             </div>
-         @foreach ($products as $item)
+         @foreach ($list as $item)
              <div class="cart-container">
                 
                 <div class="cart-image">
@@ -76,30 +76,21 @@ $total = ProductController::cartItem();
                 
                 <div class="cart-info">
                 <div class="">
-                 <h2>{{ $item->Name }}</h2>
-                 <h3>{{ $item->Description }}</h3>
-                 <h3>{{ $item->Price }}</h3>
-
+                 <h2>Name: {{ $item->Name }}</h2>
+                 <h3>Delivery Status: {{ $item->status}}</h3>
+                 <h3>Billing Address: {{  $item->address }}</h3>
+                 <h3>Payment Method: {{ $item->payment_method }}</h3>
+                 <h3>Payment Status: {{ $item->payment_status }}</h3>
                 </div>
                 </a>
                 </div>
 
-                <div class="cart-remove">
-                    <a href="/remove/{{ $item->cart_id }}">Remove from Cart</a>
-        
-                <div class="">
-                 
-                </div>
-                </a>
-                </div>
              </div>
          @endforeach
 
         
 
         
-       
-         <a href="order" class="">Place Order</a>
     <script>
         var moonicon = document.getElementById("moonicon");
     /* 

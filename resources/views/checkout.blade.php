@@ -31,11 +31,12 @@ $total = ProductController::cartItem();
         <a href="{{ url('welcome')}}"><img src="images/13keys_-_black.png" width="125" height="85" class="logo" alt=""></a>
         @if(Session::has('user'))
         <ul>
+         <li><a href="{{ url('myorders') }}">My Orders</a></li>  
          <li><a href="{{ url('welcome')}}">Home</a></li>
          <li><a href="{{ url('productspage')}}">Products</a></li>
          <li><a href="{{ url('aboutus') }}">Contact Us</a></li>  
          <li><a href="{{ url('logout')}}">Logout</a></li>
-         <li><a href="/cartmenu"><i class="fa fa-shopping-cart" style="font-size:25px">({{ $total }})</i></a></li>
+         <li><a href="cartmenu"><i class="fa fa-shopping-cart" style="font-size:25px">({{ $total }})</i></a></li>
          <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
          @else
          <ul>
@@ -76,7 +77,21 @@ $total = ProductController::cartItem();
     </tbody>
   </table>
 
+      
+
+   <form action="/orderplaced" method="POST">
+    @csrf
+    <div class="payment-methods">
+    <label for="pm">Billing Information</label> <br> <br>
+    <h3>User Name: {{ Session::get('user')['Firstname'] }}</h3>
+    <h3>Email Address: {{ Session::get('user')['EmailAddress'] }}</h3>
+    <textarea name="address" placeholder="Please enter your billing address" class="address-box"></textarea> <br> <br>
+    <label for="pm">Payment Method</label> <br> <br>
+    <input type="radio" value="cash" name="payment"> <span>Online Payment</span> <br> <br>
+    <input type="radio" value="cash" name="payment"> <span>EMI Payment</span> <br> <br>
+    </div>
   <button type="submit" class="">Order Now</button>
+</form>
 </div>
 
         
