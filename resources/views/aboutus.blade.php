@@ -55,18 +55,15 @@ $listAmount = ProductController::wishListItem();
 
 <p1>
     <div class="about-us">
-        About us
         
-        <br>
+        <h3>About us</h3>
         <br>
         We are 13Keys the market leading e-commerce store for buying instruments.
         As a team we thrive to give our customers the best service we can by not only selling the highest quality equipment possible
         but also give our customers the best experience while purchasing their new equipment.
         <br>
         <br>
-        <br>
-        Why shop at 13Keys
-        <br>
+        <h3>Why shop at 13Keys</h3>
         <br>
         We only sell the highest quality equipment so it'll last a lifetime.
         <br>
@@ -81,22 +78,16 @@ $listAmount = ProductController::wishListItem();
         If you decide it isn't what you want you can return it within 30 days.
         <br>
         <br>
+        <h3>News letter</h3>
         <br>
-        News letter
-        <br>
-        <br>
-        Want to keep up to date with all our latest news and discounts?
-        <br>
-        Join our news letter here!
-        <br>
-        <a id="nothing" href="#">Click here</a>
+        A news letter is currently in development and will be online shortly!
 </p1>
 
 <footer>
     <div class="about-us-footer">
         Where to contact us
         <br>
-        Twitter: <a id="nothing" href="#">13Keys</a> LinkedIn: <a id="nothing" href="#">13Keys</a> Email: <a id="nothing" href="#">13Keys</a>
+        Twitter: <a id="nothing" href="#">13Keys</a> LinkedIn: <a id="nothing" href="#">13Keys</a> Email: 13Keys@hotmail.co.uk
 </footer>
 
     <script>

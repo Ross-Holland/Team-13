@@ -1,10 +1,12 @@
 <?php
+
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Session;
-$total=0;
-if(Session::has('user')){
-$total = ProductController::cartItem();
-$listAmount = ProductController::wishListItem();
+
+$total = 0;
+if (Session::has('user')) {
+    $total = ProductController::cartItem();
+    $listAmount = ProductController::wishListItem();
 }
 ?>
 <!DOCTYPE html>
@@ -35,20 +37,20 @@ $listAmount = ProductController::wishListItem();
         <a href="{{ url('welcome')}}"><img src="images/13keys_-_black.png" width="125" height="85" class="logo" alt=""></a>
         @if(Session::has('user'))
         <ul>
-         <li><a href="{{ url('myorders') }}">My Orders</a></li>     
-         <li><a href="{{ url('welcome')}}">Home</a></li>
-         <li><a href="{{ url('productspage')}}">Products</a></li>
-         <li><a href="{{ url('aboutus') }}">Contact Us</a></li>  
-         <li><a href="{{ url('logout')}}">Logout</a></li>
-         <li><a href="wishlist"><i class="fa fa-star-o" style="font-size:25px">({{ $listAmount }})</i></a></li>
-         <li><a href="cartmenu"><i class="fa fa-shopping-cart" style="font-size:25px">({{ $total }})</i></a></li>
-         <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
-         @else
-         
-         @endif
+            <li><a href="{{ url('myorders') }}">My Orders</a></li>
+            <li><a href="{{ url('welcome')}}">Home</a></li>
+            <li><a href="{{ url('productspage')}}">Products</a></li>
+            <li><a href="{{ url('aboutus') }}">Contact Us</a></li>
+            <li><a href="{{ url('logout')}}">Logout</a></li>
+            <li><a href="wishlist"><i class="fa fa-star-o" style="font-size:25px">({{ $listAmount }})</i></a></li>
+            <li><a href="cartmenu"><i class="fa fa-shopping-cart" style="font-size:25px">({{ $total }})</i></a></li>
+            <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
+            @else
+
+            @endif
         </ul>
-  
-  
+
+
     </nav>
 
     <div class="welcome-page-header">
@@ -79,22 +81,54 @@ $listAmount = ProductController::wishListItem();
                 <br>
                 <br>
                 To login click the Login button in the navigation bar above.
-            @endif
+                @endif
     </p1>
     <br>
     <br>
     Trending Now!
     <div class="carousel-container">
-        <div class="carousel-images">
-            <img class="carousel-img" src="login_elec_guitar.png">
-        </div>
 
-        <div class="carousel-images">
-            <img class="carousel-img" src="images/eguitar.png">
-        </div>
+        <?php
 
-       
+        $db_host = 'localhost';
+        $db_name = 'e-commercedb';
+        $username = 'root';
+        $password = '123';
+
+        try {
+            $db = new PDO("mysql:dbname=$db_name;host=$db_host", $username);
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            try {
+                $query = "SELECT  * FROM  home_carousel ";
+                $rows =  $db->query($query);
+
+                if ($rows && $rows->rowCount() > 0) {
+                    while ($row =  $rows->fetch()) {
+        ?>
+                        <div class="carousel-images">
+                            <?php
+                            echo '<tr><td><a href="/productselect?productid=' . $row['id'] . '"><img src ="' . $row['Image link'] . '" width= 250px height= 350px></a></td>';
+                            ?>
+                        </div>
+        <?php
+                    }
+                } else {
+                    echo  "<p>No record in the list.</p>\n";
+                }
+            } catch (PDOexception $ex) {
+                echo "Sorry, a database error occurred! <br>";
+                echo "Error details: <em>" . $ex->getMessage() . "</em>";
+            }
+        } catch (PDOException $ex) {
+            echo ("Failed to connect to the database.<br>");
+            echo ($ex->getMessage());
+            exit;
+        }
+        ?>
+
     </div>
+
+
 
 
 
@@ -113,7 +147,6 @@ $listAmount = ProductController::wishListItem();
     I.e., if the icon is clicked while it is dark then it will remove the dark and put the light. Vice versa for the else if statement, this time it will add dark if it is light.
     Line 112 - this is the part which allows a click to swap between the themes. 'Dark' refers to the css in main.css, it will call on that css if the moon-icon is clicked.
     Line 115 - this is telling the storage to store 'dark' under the variable 'dark-theme', or if 'dark' css is not activated (else) store the current theme under 'light-theme' variable.
-
     */
 
     if (localStorage.getItem("theme") == null) {
@@ -143,21 +176,19 @@ $listAmount = ProductController::wishListItem();
     let carouselIndex = 0;
     showCarouselImages();
 
-    function showCarouselImages(){
+    function showCarouselImages() {
         let x;
         let carouselImage = document.getElementsByClassName("carousel-images");
-        for(i = 0; i < carouselImage.length; i++){
+        for (i = 0; i < carouselImage.length; i++) {
             carouselImage[i].style.display = "none";
         }
         carouselIndex++;
-        if(carouselIndex > carouselImage.length){
+        if (carouselIndex > carouselImage.length) {
             carouselIndex = 1
         }
-        carouselImage[carouselIndex-1].style.display = "block";
-        setTimeout(showCarouselImages,2000);
+        carouselImage[carouselIndex - 1].style.display = "block";
+        setTimeout(showCarouselImages, 2000);
     }
-
-
 </script>
 
 </html>
