@@ -192,6 +192,20 @@ class ImagesSeeder extends Seeder
                 'Image2'=>"https://cdn.discordapp.com/attachments/1045063605030232114/1046387693568921731/wood_acoustic_11_2.jpg",
                 'Image3'=>"https://cdn.discordapp.com/attachments/1045063605030232114/1046387693879296061/wood_acoustic_11_3.jpg"
             ],
+            [
+                'productsid'=>"26",
+                'Name'=>"Yodele A432 White Keyboard",
+                'Image1'=>"https://cdn.discordapp.com/attachments/1045063605030232114/1046387921328013332/white_piano_17_1.jpg",
+                'Image2'=>"https://cdn.discordapp.com/attachments/1045063605030232114/1045350499106426940/17_1.png",
+                'Image3'=>"https://cdn.discordapp.com/attachments/1045063605030232114/1047149357805338716/white_piano_17_1.jpg"
+            ], 
+            [
+                'productsid'=>"27",
+                'Name'=>"Ace V75 Natural Sunburst",
+                'Image1'=>"https://cdn.discordapp.com/attachments/1045063605030232114/1046387694751719464/sunburst_acoustic_12_1.jpg",
+                'Image2'=>"https://cdn.discordapp.com/attachments/1045063605030232114/1045350499492315277/12_1.png",
+                'Image3'=>"https://cdn.discordapp.com/attachments/1045063605030232114/1047150091221340270/sunburst_acoustic_12_1.jpg"
+            ],
         ]);
     }
 }
