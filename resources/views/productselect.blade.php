@@ -15,7 +15,7 @@ $listAmount = ProductController::wishListItem();
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="images/13keys_-_black.png">
+    <link rel="icon" type="image/x-icon" href="13keys-black.png">
 
     <title>Products Page</title>
     <!-- Fonts -->
@@ -35,8 +35,9 @@ $listAmount = ProductController::wishListItem();
         <label for="box" class="boxbtn">
             <i class="fa fa-bars"></i>
         </label>
-        <a href="{{ url('welcome')}}"><img src="13keys-black.png" width="150" height="100" style="margin-left:25px; margin-top:15px;" class="logo" alt=""></a>
+       
         @if(Session::has('user'))
+        <a href="{{ url('welcome')}}"><img src="13keys-black.png" width="150" height="100" style="margin-left:25px; margin-top:15px;" class="logo" alt=""></a>
         <ul>
             <li><a href="{{ url('myorders') }}">My Orders</a></li>     
             <li><a href="{{ url('welcome')}}">Home</a></li>
@@ -47,7 +48,7 @@ $listAmount = ProductController::wishListItem();
             <li><a href="cartmenu"><i class="fa fa-shopping-cart" style="font-size:25px">({{ $total }})</i></a></li>
             <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
          @else
-         <img src="images/13keys_-_black.png" width="125" height="85" class="logo" alt="">
+         <a href="{{ url('welcome')}}"><img src="13keys-black.png" width="150" height="100" style="margin-left:25px; margin-top:15px;" class="logo" alt=""></a>
          <ul>
            <li><a href="{{ url('productspage')}}">Products</a></li>
            <li><a href="{{ url('login')}}">Login</a></li>
@@ -132,7 +133,7 @@ $listAmount = ProductController::wishListItem();
                                 <form action="/add_to_wish" method="POST">
                                  @csrf
                                  <input type="hidden" name="product_id" value="{{ $row['id'] }}">
-                                <button class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Add to Wishlist</button>
+                                 <button class="btn btn-primary" style="margin-top:10px"><i class="fa fa-star-o"></i> Add to Wishlist</button>
                                 </form>
                                 <?php
                         }

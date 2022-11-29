@@ -686,6 +686,8 @@ button{
 
 button:hover{
     border-width:3px;
+    border-color:var(--h-colour);
+    color:var(--h-colour);
 }
 
 .controls{

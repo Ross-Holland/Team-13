@@ -15,7 +15,7 @@ if (Session::has('user')) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="images/13keys_-_black.png">
+    <link rel="icon" type="image/x-icon" href="13keys-black.png">
 
     <title>13Keys Homepage</title>
 

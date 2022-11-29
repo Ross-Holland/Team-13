@@ -4,7 +4,7 @@
 <head>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="icon" type="image/x-icon" href="images/13keys_-_black.png">
+   <link rel="icon" type="image/x-icon" href="13keys-black.png">
 
    <title>Registation Page</title>
    <!-- Fonts -->
@@ -35,7 +35,7 @@
          <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
       </ul>
       @else
-      <img src="images/13keys_-_black.png" width="125" height="85" alt="">
+      <a href="{{ url('welcome')}}"><img src="13keys-black.png" width="150" height="100" style="margin-left:25px; margin-top:15px;" class="logo" alt=""></a>
       <ul>
          <li><a href="{{ url('productspage')}}">Products</a></li>
          <li><a href="{{ url('login')}}">Login</a></li>

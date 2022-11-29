@@ -14,7 +14,7 @@ $listAmount = ProductController::wishListItem();
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="images/13keys_-_black.png">
+    <link rel="icon" type="image/png" href="13keys-black.png">
 
     <title>Laravel</title>
 
@@ -34,7 +34,7 @@ $listAmount = ProductController::wishListItem();
         <label for="box" class="boxbtn">
             <i class="fa fa-bars"></i>
         </label>
-        <a href="{{ url('welcome')}}"><img src="images/13keys_-_black.png" width="125" height="85" class="logo" alt=""></a>
+        <a href="{{ url('welcome')}}"><img src="13keys-black.png" width="150" height="100" style="margin-left:25px; margin-top:15px;" class="logo" alt=""></a>
         @if(Session::has('user'))
         <ul>
             <li><a href="{{ url('myorders') }}">My Orders</a></li>     
@@ -67,7 +67,7 @@ $listAmount = ProductController::wishListItem();
              <div class="cart-container">
                 
                 <div class="cart-image">
-                    <a href="productspage/{{ $item->id }}" class="">
+                    <a href="/productselect?productid={{ $item->id }}" class="">
                 <img src="{{ $item->Image }}" alt="" class="trending-image" width= 250px height= 350px>
                 <div class="">
 
