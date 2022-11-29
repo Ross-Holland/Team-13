@@ -56,14 +56,14 @@ $listAmount = ProductController::wishListItem();
 <p1>
     <div class="about-us">
         
-        <h3>About us</h3>
+        <h3><div class="about-us-header">About us</div></h3>
         <br>
         We are 13Keys the market leading e-commerce store for buying instruments.
         As a team we thrive to give our customers the best service we can by not only selling the highest quality equipment possible
         but also give our customers the best experience while purchasing their new equipment.
         <br>
         <br>
-        <h3>Why shop at 13Keys</h3>
+        <h3><div class="about-us-header">Why shop at 13Keys</div></h3>
         <br>
         We only sell the highest quality equipment so it'll last a lifetime.
         <br>
@@ -73,21 +73,30 @@ $listAmount = ProductController::wishListItem();
         <br>
         In case of accidents all purchases come with free 3 year warrenty for fixes or replacements.   
         <br>
-        Our excelent stock means You'll find exactly what u need.
+        Our excellent stock and variety of instruments means your needs will be met.
         <br>
-        If you decide it isn't what you want you can return it within 30 days.
+        If you decide it isn't what you want you can return it within 30 days, providing you contact us via email first.
         <br>
         <br>
-        <h3>News letter</h3>
+        <h3><div class="about-us-header">News Letter</div></h3>
         <br>
-        A news letter is currently in development and will be online shortly!
+        A news letter is currently in development and will be available in the future.
+        <br>
+        <br>
+        <h3><div class="about-us-header">Vision</div></h3>
+        We strive to promote the music industry and provide all musicians of any level the means to pursure their passion.
+        <br>
+        We hope to grow as an independent musical retailer and aim to expand our online store onto the highstreets near you!
+        <br>
+        By 2024 we hope we hope to have achieved this and much more, we look forward to meeting you all.
+
 </p1>
 
 <footer>
     <div class="about-us-footer">
-        Where to contact us
+        How to contact us:
         <br>
-        Twitter: <a id="nothing" href="#">13Keys</a> LinkedIn: <a id="nothing" href="#">13Keys</a> Email: 13Keys@hotmail.co.uk
+        <p1>Phone Number: 01537 429863</p1> <p1>Address: 3 Marginal Avenue, D78 4TP</p1> 13Keys@hotmail.co.uk
 </footer>
 
     <script>

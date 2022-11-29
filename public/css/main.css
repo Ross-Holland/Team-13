@@ -692,3 +692,9 @@ button:hover{
 .imagebtn.active{
     background: var(--h-colour);
 }
+
+.about-us-header{
+    text-align:center;
+    padding: 5px;
+    text-decoration: underline;
+}
