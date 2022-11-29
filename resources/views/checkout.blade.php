@@ -90,8 +90,8 @@ $listAmount = ProductController::wishListItem();
         <h3>Email Address: {{ Session::get('user')['EmailAddress'] }}</h3>
         <textarea name="address" placeholder="Please enter your billing address" class="address-box"></textarea> <br> <br>
         <label for="pm">Payment Method</label> <br> <br>
-        <input type="radio" value="cash" name="payment"> <span>Online Payment</span> <br> <br>
-        <input type="radio" value="cash" name="payment"> <span>EMI Payment</span> <br> <br>
+        <input type="radio" value="Debit card" name="payment"> <span>Online Payment</span> <br> <br>
+        <input type="radio" value="Credit card" name="payment"> <span>EMI Payment</span> <br> <br>
         </div>
       <button type="submit" class="order-button">Order Now</button>
     </form>

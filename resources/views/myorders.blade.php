@@ -86,6 +86,8 @@ $listAmount = ProductController::wishListItem();
                 </div>
 
              </div>
+
+             
          @endforeach
 
         

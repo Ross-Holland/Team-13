@@ -78,23 +78,19 @@ $listAmount = ProductController::wishListItem();
 
                 
                 <div class="cart-info">
-                <div class="">
+               
                  <div class = "name"><h2>{{ $item->Name }}</h2></div>
                  <div class = "desc"><h3>{{ $item->Description }}</h3></div>
                  <div class = "price"><h3>£{{ $item->Price }}</h3></div>
 
                 </div>
-                </a>
-                </div>
+               
+                
 
                 <div class="cart-remove">
                     <a href="/remove/{{ $item->cart_id }}"><i class="fa fa-trash" aria-hidden="true"></i></a>
-        
-                <div class="">
-                 
                 </div>
-                </a>
-                </div>
+                
              </div>
          @endforeach
 

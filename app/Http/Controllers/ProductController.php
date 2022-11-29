@@ -27,7 +27,10 @@ class ProductController extends Controller
         
         }
      else{
-          return redirect('/login');
+      echo ("<script>
+      window.alert('Please login to access this feature!');
+      window.location.href='/login';
+      </script>");
          }
 
         
@@ -57,6 +60,8 @@ class ProductController extends Controller
       Cart::destroy($id);
       return redirect('cartmenu');
     }
+
+       //Order
 
 
     //this allows the total amount information to be displayed on the order page, it gathers the id and the product ids that are linked to that user_id and total things up by joining tables like before
@@ -108,6 +113,7 @@ class ProductController extends Controller
 
     }
 
+
     //Wishlist functions
 
     function addToWish(Request $req)
@@ -115,15 +121,18 @@ class ProductController extends Controller
         if($req->session()->has('user'))
         {
 
-        $cart = new Wish;
-        $cart->user_id=$req->session()->get('user')['id'];
-        $cart->product_id=$req->product_id;
-        $cart->save();
+        $wish = new Wish;
+        $wish->user_id=$req->session()->get('user')['id'];
+        $wish->product_id=$req->product_id;
+        $wish->save();
         return redirect('/welcome');
         
         }
      else{
-          return redirect('/login');
+      echo ("<script>
+      window.alert('Please login to access this feature!');
+      window.location.href='/login';
+      </script>");
          }
 
 }
@@ -149,5 +158,7 @@ class ProductController extends Controller
      Wish::destroy($id);
      return redirect('wishlist');
    }
+
+
 
 }
