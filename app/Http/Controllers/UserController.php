@@ -16,8 +16,7 @@ class UserController extends Controller
         $check = User::where(['EmailAddress' => $req->email])->first();
 
         if (!$check || !Hash::check($req->password, $check->Password)) {
-
-
+            
             echo ("<script>
                 window.alert('Wrong username or password!');
                 window.location.href='/login';
