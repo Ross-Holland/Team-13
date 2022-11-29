@@ -36,7 +36,7 @@ $listAmount = ProductController::wishListItem();
             <i class="fa fa-bars"></i>
         </label>
         @if(Session::has('user'))
-        <a href="{{ url('welcome')}}"><img src="images/13keys_-_black.png" width="125" height="85" class="logo" alt=""></a>
+        <a href="{{ url('welcome')}}"><img src="13keys-black.png" width="150" height="100" style="margin-left:25px; margin-top:15px;" class="logo" alt=""></a>
         <ul>
             <li><a href="{{ url('myorders') }}">My Orders</a></li>     
             <li><a href="{{ url('welcome')}}">Home</a></li>

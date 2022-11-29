@@ -35,7 +35,7 @@ if (Session::has('user')) {
         <label for="box" class="boxbtn">
             <i class="fa fa-bars"></i>
         </label>
-        <a href="{{ url('welcome')}}"><img src="images/13keys_-_black.png" width="125" height="85" class="logo" alt=""></a>
+        <a href="{{ url('welcome')}}"><img src="13keys-black.png" width="150" height="100" style="margin-left:25px; margin-top:15px;" class="logo" alt=""></a>
         @if(Session::has('user'))
         <ul>
             <li><a href="{{ url('myorders') }}">My Orders</a></li>
@@ -60,7 +60,7 @@ if (Session::has('user')) {
     <p1>
         @if(Session::has('user'))
         <div class="welcome-text">
-            Welcome {{ Session::get('user')['Firstname'] }} to 13Keys!
+        <h2> Welcome {{ Session::get('user')['Firstname'] }} to 13Keys!</h2>
             <br>
             <br>
             We are the market leading e-commerce store for buying musical instruments.
@@ -70,7 +70,7 @@ if (Session::has('user')) {
             Please feel free to browse our products and get in contact with if you have any queries.
             @else
             <div class="welcome-text">
-                Welcome to 13Keys!
+            <h2> Welcome to 13Keys!</h2>
                 <br>
                 <br>
                 We are the market leading e-commerce store for buying musical instruments.
@@ -86,7 +86,7 @@ if (Session::has('user')) {
     </p1>
     <br>
     <br>
-    Trending Now!
+    <h2>Trending Now!</h2>
     <div class="carousel-container">
 
         <?php

@@ -35,9 +35,8 @@ $listAmount = ProductController::wishListItem();
         <label for="box" class="boxbtn">
             <i class="fa fa-bars"></i>
         </label>
-        
+        <a href="{{ url('welcome')}}"><img src="13keys-black.png" width="150" height="100" style="margin-left:25px; margin-top:15px;" class="logo" alt=""></a>
         @if(Session::has('user'))
-        <a href="{{ url('welcome')}}"><img src="images/13keys_-_black.png" width="125" height="85" class="logo" alt=""></a>
         <ul>
             <li><a href="{{ url('myorders') }}">My Orders</a></li>     
             <li><a href="{{ url('welcome')}}">Home</a></li>
@@ -86,9 +85,9 @@ $listAmount = ProductController::wishListItem();
                                     echo '<img id ="productimg" src ="' . $row['Image1'] . '">';
                                 ?>
                                 <div class="controls">
-                                    <span onclick="img1()" class="imagebtn active"></span>
-                                    <span onclick="img2()" class="imagebtn"></span>
-                                    <span onclick="img3()"class="imagebtn"></span>
+                                    <span onclick="img1()" class="imagebtn"><i class="fa fa-search-plus" aria-hidden="true" style= "padding-left:5px; padding-top:2px"></i></span>
+                                    <span onclick="img2()" class="imagebtn"><i class="fa fa-search-plus" aria-hidden="true" style= "padding-left:5px; padding-top:2px"></i></span>
+                                    <span onclick="img3()" class="imagebtn"><i class="fa fa-search-plus" aria-hidden="true" style= "padding-left:5px; padding-top:2px"></i></span>
                                 </div>
                                 </div>
                                 <?php
@@ -169,10 +168,6 @@ $listAmount = ProductController::wishListItem();
                 echo  "<p>No record in the list.</p>\n";
             }
         ?>
-        ;for(btn in imagebtn){
-            btn.classList.remove("active");
-        }
-        this.classList.add("active");
     }
     function img2(){
         <?php
@@ -188,10 +183,6 @@ $listAmount = ProductController::wishListItem();
                 echo  "<p>No record in the list.</p>\n";
             }
         ?>
-        ;for(btn in imagebtn){
-            btn.classList.remove("active");
-        }
-        this.classList.add("active");
     }
     function img3(){
         <?php
@@ -207,12 +198,7 @@ $listAmount = ProductController::wishListItem();
                 echo  "<p>No record in the list.</p>\n";
             }
         ?>
-        ;for(btn in imagebtn){
-            btn.classList.remove("active");
-        }
-        this.classList.add("active");
     }
-    console.log(productimg.src);
 </script>
 
 

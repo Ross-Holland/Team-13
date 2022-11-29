@@ -52,6 +52,18 @@ footer{
     font-size: 18px;
 }
 
+.welcome-text h2{
+        text-align:center;
+        padding: 40px;
+        text-align: center;
+        font-size: 30px;
+        border-bottom: 3px solid rgb(71, 71, 71);
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      
+}
+
 body {
     font-family: 'serif';
     background-color: var(--p-colour);
@@ -65,7 +77,9 @@ label{
     text-align: right;
     margin: 5px;
 }
-
+.carousel-container{
+    padding-top:50px;
+}
 /*Navigation bar*/
 
 *{
@@ -82,7 +96,7 @@ body{
 
 nav{
     background-color: var(--head-colour);
-    height: 78px;
+    height: 125px;
     width: 100%;
 
 }
@@ -215,12 +229,12 @@ a.current1, a.current2, a:hover{
 
 :root{
     /*Primary (main background) and Secondary Colours (text)*/
-    --p-colour: #e0e7ff;
+    --p-colour: #ffffff;
     --s-colour: #1f1d1d;
     /*Hover Colour*/
     --h-colour: #0082e6;
     /*Header Colours Used for Navbar and Header*/
-    --head-colour: #fb7185;
+    --head-colour: #aeaeae;
 
     
 }
@@ -661,16 +675,17 @@ button{
     margin-right:auto;
     margin-left:auto;
     height:50px;
-    width:190px;
+    width:100%;
     display:block;
-    border-radius:25px;
+    border-radius:5px;
+    opacity:0.6;
     cursor:pointer;
     font-size: 20px;
+    font-weight: bold;
 }
 
 button:hover{
-    border-width:5px;
-    font-weight: bold;
+    border-width:3px;
 }
 
 .controls{
@@ -681,17 +696,17 @@ button:hover{
 
 .imagebtn{
     display:block;
-    width:20px;
-    height:20px;
-    border-radius:50%;
-    background:#424242;
+    width:40px;
+    height:40px;
+    font-size:30px;
+    background:#cecece;
     margin:10px;
     cursor:pointer;
 }
-
-.imagebtn.active{
-    background: var(--h-colour);
+.imagebtn i{
+color: #595959;
 }
+
 
 .about-us-header{
     text-align:center;
