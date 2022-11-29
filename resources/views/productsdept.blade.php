@@ -15,6 +15,7 @@ $listAmount = ProductController::wishListItem();
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="images/13keys_-_black.png">
 
     <title>Products Page</title>
     <!-- Fonts -->
