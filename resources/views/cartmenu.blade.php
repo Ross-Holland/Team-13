@@ -69,7 +69,7 @@ $listAmount = ProductController::wishListItem();
              <div class="cart-container">
                 
                 <div class="cart-image">
-                    <a href="productspage/{{ $item->id }}" class="">
+                    <a href="/productselect?productid={{ $item->id }}" class="">
                 <img src="{{ $item->Image }}" alt="" class="trending-image" width= 250px height= 350px>
                 <div class="">
 
@@ -96,9 +96,6 @@ $listAmount = ProductController::wishListItem();
          @endforeach
 
        
-         <div class = "orderLink">
-                <a href="order" >PROCEED TO CHECKOUT</a>
-        </div>
 
     <script>
         var moonicon = document.getElementById("moonicon");

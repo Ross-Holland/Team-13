@@ -66,7 +66,7 @@ $listAmount = ProductController::wishListItem();
              <div class="cart-container">
                 
                 <div class="cart-image">
-                    <a href="productspage/{{ $item->id }}" class="">
+                <a href="/productselect?productid={{ $item->id }}" class="">
                 <img src="{{ $item->Image }}" alt="" class="trending-image">
                 <div class="">
 

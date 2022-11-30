@@ -37,7 +37,6 @@
       @else
       <a href="{{ url('welcome')}}"><img src="13keys-black.png" width="150" height="100" style="margin-left:25px; margin-top:15px;" class="logo" alt=""></a>
       <ul>
-         <li><a href="{{ url('productspage')}}">Products</a></li>
          <li><a href="{{ url('login')}}">Login</a></li>
          <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
       </ul>

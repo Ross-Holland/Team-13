@@ -57,14 +57,14 @@ $listAmount = ProductController::wishListItem();
 <p1>
     <div class="about-us">
         
-        <h3><div class="about-us-header">About us</div></h3>
+        <h2><div class="about-us-header">About us</div></h2>
         <br>
         We are 13Keys the market leading e-commerce store for buying instruments.
         As a team we thrive to give our customers the best service we can by not only selling the highest quality equipment possible
         but also give our customers the best experience while purchasing their new equipment.
         <br>
         <br>
-        <h3><div class="about-us-header">Why shop at 13Keys</div></h3>
+        <h2><div class="about-us-header">Why shop at 13Keys</div></h2>
         <br>
         We only sell the highest quality equipment so it'll last a lifetime.
         <br>
@@ -79,12 +79,13 @@ $listAmount = ProductController::wishListItem();
         If you decide it isn't what you want you can return it within 30 days, providing you contact us via email first.
         <br>
         <br>
-        <h3><div class="about-us-header">News Letter</div></h3>
+        <h2><div class="about-us-header">News Letter</div></h2>
         <br>
         A news letter is currently in development and will be available in the future.
         <br>
         <br>
-        <h3><div class="about-us-header">Vision</div></h3>
+        <h2><div class="about-us-header">Vision</div></h2>
+        <br>
         We strive to promote the music industry and provide all musicians of any level the means to pursure their passion.
         <br>
         We hope to grow as an independent musical retailer and aim to expand our online store onto the highstreets near you!
@@ -95,9 +96,10 @@ $listAmount = ProductController::wishListItem();
 
 <footer>
     <div class="about-us-footer">
-        How to contact us:
+        <p>How to contact us:</p>
         <br>
-        <p1>| Phone Number: 01537 429863 |</p1> <p1>Address: 3 Marginal Avenue, D78 4TP |</p1> Email: 13Keys@hotmail.co.uk |
+        <p1>Phone Number: 01537 429863</p1> <p1>Address: 3 Marginal Avenue, D78 4TP</p1> Email: 13Keys@hotmail.co.uk
+        <br>
 </footer>
 
     <script>
