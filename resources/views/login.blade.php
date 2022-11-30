@@ -38,7 +38,7 @@
             <button class="login-button">Login</button>
             <hr class="login-line-break">
             <div class="login-register-wrap">
-            <p class="login-register">Don't have an account?</p>
+            <p class="login-register">Do not have an account?</p>
             <a href="{{ url('registrationpage')}}" class="login-register-button"><p>Register</p></a>
             </div>
           </form>

@@ -97,7 +97,7 @@ $listAmount = ProductController::wishListItem();
     <div class="about-us-footer">
         How to contact us:
         <br>
-        <p1>Phone Number: 01537 429863</p1> <p1>Address: 3 Marginal Avenue, D78 4TP</p1> 13Keys@hotmail.co.uk
+        <p1>| Phone Number: 01537 429863 |</p1> <p1>Address: 3 Marginal Avenue, D78 4TP |</p1> Email: 13Keys@hotmail.co.uk |
 </footer>
 
     <script>

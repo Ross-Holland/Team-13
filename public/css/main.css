@@ -28,15 +28,12 @@ footer{
 
 .about-us-footer {
     position: fixed;
-    left: 0;
     bottom: 0;
-    width: 100;
+    left: 0;
     color: var(--s-colour);
-    padding-bottom: 15px;
     padding-top: 10px;
     font-size: 20px;
     background-color: var(--head-colour);
-    height: 78px;
     width: 100%;
 }
 
