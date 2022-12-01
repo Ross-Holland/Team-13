@@ -8,7 +8,7 @@
     width: 100%;
     min-height: 100vh;
     overflow: hidden;
-    background-color: #fb7185;
+    background-color: #aeaeae;
     padding: 2rem;
     display: flex;
     align-items: center;
@@ -20,7 +20,7 @@
     width: 100%;
     max-width: 48rem;
     height:30rem;
-    background-color: #e0e7ff;
+    background-color: white;
     border-radius: 1rem;
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
@@ -55,24 +55,26 @@
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: 700;
-    color: #6366f1;
+    color: black;
 }
 .login-welcome-text{
     font-size: 0.85rem;
     line-height: 1rem;
     margin-top: 0.75rem;
-    color: #6366f1;
+    color: black;
 }
 .login-email{
     border: transparent;
-    border-color: #e0e7ff;
+    border-color: black;
+    border-style: solid;
     padding: 0.5rem;
     border-radius: 0.75rem;
     border-width: 0.063px;
 }
 .login-password{
     border: transparent;
-    border-color: #e0e7ff;
+    border-color: black;
+    border-style: solid;
     padding: 0.5rem;
     border-radius: 0.75rem;
     border-width: 0.063rem;
@@ -108,7 +110,7 @@
 .login-register{
     font-size: 0.85rem;
     line-height: 1rem;
-    color: #6366f1;
+    color: black;
 }
 .login-register-button{
     cursor: pointer;
