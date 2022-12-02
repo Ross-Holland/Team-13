@@ -29,34 +29,34 @@ if (Session::has('user')) {
 </head>
 
 <body class="antialiased">
-    <nav>
+<nav>
 
-        <input type="checkbox" id="box">
-        <label for="box" class="boxbtn">
-            <i class="fa fa-bars"></i>
-        </label>
-        @if(Session::has('user'))
-        <a href="{{ url('welcome')}}"><img src="13keys-black.png" width="150" height="100" style="margin-left:25px; margin-top:15px;" class="logo" alt=""></a>
-        <ul>
-            <li><a href="{{ url('welcome')}}">Home</a></li>
-            <li><a href="{{ url('productspage')}}">Products</a></li>
-            <li><a href="{{ url('aboutus') }}">Contact Us</a></li>
-            <li><a href="{{ url('logout')}}">Logout</a></li>
-            <li><a href="/"><i class="fa fa-shopping-cart" style="font-size:25px"></i></a></li>
-            <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
-        </ul>
-        @else
-        <a href="{{ url('welcome')}}"><img src="13keys-black.png" width="150" height="100" style="margin-left:25px; margin-top:15px;" class="logo" alt=""></a>
-        <ul>
-            <li><a href="{{ url('productspage')}}">Products</a></li>
-            <li><a href="{{ url('login')}}">Login</a></li>
-            <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
-        </ul>
-        @endif
+<input type="checkbox" id="box">
+<label for="box" class="boxbtn">
+    <i class="fa fa-bars"></i>
+</label>
+@if(Session::has('user'))
+<a href="{{ url('welcome')}}"><img src="13keys-black.png" width="150" height="100" style="margin-left:25px; margin-top:15px;" class="logo" alt=""></a>
+<ul>
+    <li><a href="{{ url('myorders') }}">My Orders</a></li>     
+    <li><a href="{{ url('welcome')}}">Home</a></li>
+    <li><a href="{{ url('productspage')}}">Products</a></li>
+    <li><a href="{{ url('aboutus') }}">Contact Us</a></li>  
+    <li><a href="{{ url('logout')}}">Logout</a></li>
+    <li><a href="wishlist"><i class="fa fa-star-o" style="font-size:25px">({{ $listAmount }})</i></a></li>
+    <li><a href="cartmenu"><i class="fa fa-shopping-cart" style="font-size:25px">({{ $total }})</i></a></li>
+    <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
+ @else
+ <a href="{{ url('welcome')}}"><img src="13keys-black.png" width="150" height="100" style="margin-left:25px; margin-top:15px;" class="logo" alt=""></a>
+ <ul>
+   <li><a href="{{ url('productspage')}}">Products</a></li>
+   <li><a href="{{ url('login')}}">Login</a></li>
+   <li><i class="fa fa-moon-o" style="font-size:25px" id="moonicon"></i></li>
+ @endif
+</ul>
 
 
-
-    </nav>
+</nav>
 
     <div class="welcome-page-header">
 
